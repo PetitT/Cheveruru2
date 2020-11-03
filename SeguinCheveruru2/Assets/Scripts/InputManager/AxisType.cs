@@ -1,0 +1,1 @@
+﻿public enum AxisType { Raw, Smoothed }

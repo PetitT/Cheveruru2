@@ -1,0 +1,1 @@
+﻿public enum InputType { Press, Hold, Release}

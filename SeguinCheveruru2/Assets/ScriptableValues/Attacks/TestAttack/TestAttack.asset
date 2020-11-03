@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f297cfec97758b1418f23fcf0bbface7, type: 3}
+  m_Name: TestAttack
+  m_EditorClassIdentifier: 
+  HealthDamage: {fileID: 11400000, guid: e07fefa70cde3c542b11df80200fc2e5, type: 2}
+  ShieldDamage: {fileID: 11400000, guid: c1f09f48667868e4a995954b67dc6617, type: 2}
+  UnshieldedKnockBack: {fileID: 11400000, guid: 43598fc5248541e409d49a05de6e7202, type: 2}
+  ShieldedKnockBack: {fileID: 11400000, guid: cdc594a5c607c09418bb81d00a90cb41, type: 2}
