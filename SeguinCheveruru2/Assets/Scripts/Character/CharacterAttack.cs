@@ -26,7 +26,7 @@ public class CharacterAttack : MonoBehaviour
 
     private void KnockBackHandler(KnockBackData obj)
     {
-        IsAttacking.RuntimeValue = false;
+        IsAttacking.Value = false;
     }
 
     private void Update()
@@ -36,18 +36,18 @@ public class CharacterAttack : MonoBehaviour
 
     private void CheckAttackRequest()
     {
-        if (!IsAttacking.RuntimeValue && wantsToAttack)
+        if (!IsAttacking.Value && wantsToAttack)
         {
             Debug.Log("Hiku");
             wantsToAttack = false;
-            IsAttacking.RuntimeValue = true;
+            IsAttacking.Value = true;
             anim.SetTrigger("Attack");
         }
     }
 
     public void AttackRequest()
     {
-        if (AttackRequestAvailability.RuntimeValue)
+        if (AttackRequestAvailability.Value)
         {
             wantsToAttack = true;
         }

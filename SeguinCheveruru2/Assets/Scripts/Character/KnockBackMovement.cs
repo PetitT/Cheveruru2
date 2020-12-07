@@ -34,8 +34,8 @@ public class KnockBackMovement : MovementEffect
 
     private void ApplyMovement()
     {
-        currentForce -= KnockBackDeceleration.RuntimeValue * DeltaTime.RuntimeValue;
+        currentForce -= KnockBackDeceleration.Value * DeltaTime.Value;
         currentForce = Mathf.Max(currentForce, 0);
-        pMovement = currentDirection * currentForce * DeltaTime.RuntimeValue;
+        pMovement = currentDirection * currentForce * DeltaTime.Value;
     }
 }

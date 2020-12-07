@@ -9,17 +9,17 @@ public class CharAttackAnimCallbacks : MonoBehaviour
 
     public void ToggleAvailabilityTrue()
     {
-        AttackRequestAvailability.RuntimeValue = true;
+        AttackRequestAvailability.Value = true;
     }
 
     public void ToggleAvailabilityFalse()
     {
-        AttackRequestAvailability.RuntimeValue = false;
+        AttackRequestAvailability.Value = false;
     }
 
     public void ToggleAttackFalse()
     {
-        IsAttacking.RuntimeValue = false;
-        AttackRequestAvailability.RuntimeValue = true;
+        IsAttacking.Value = false;
+        AttackRequestAvailability.Value = true;
     }
 }

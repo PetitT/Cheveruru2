@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    public AttackData attackData;
+    public AttackDamageData attackData;
 }

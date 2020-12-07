@@ -40,9 +40,9 @@ public class CharacterShield : MonoBehaviour
 
     private void ShieldDamagehandler(float obj)
     {
-        ShieldValue.RuntimeValue -= obj;
-        ShieldValue.RuntimeValue = Mathf.Max(ShieldValue.RuntimeValue, 0);
-        if (ShieldValue.RuntimeValue == 0)
+        ShieldValue.Value -= obj;
+        ShieldValue.Value = Mathf.Max(ShieldValue.Value, 0);
+        if (ShieldValue.Value == 0)
         {
             BreakShield();
         }
@@ -88,18 +88,18 @@ public class CharacterShield : MonoBehaviour
 
     private void RegenerateShield()
     {
-        ShieldValue.RuntimeValue += Time.deltaTime * ShieldGainPerSec.RuntimeValue;
-        if (ShieldValue.RuntimeValue >= ShieldValue.InitialValue)
+        ShieldValue.Value += Time.deltaTime * ShieldGainPerSec.Value;
+        if (ShieldValue.Value >= ShieldValue.InitialValue)
         {
-            ShieldValue.RuntimeValue = ShieldValue.InitialValue;
+            ShieldValue.Value = ShieldValue.InitialValue;
             currentState = ShieldState.fullShield;
         }
     }
 
     private void LoseShield()
     {
-        ShieldValue.RuntimeValue -= Time.deltaTime;
-        if (ShieldValue.RuntimeValue <= 0)
+        ShieldValue.Value -= Time.deltaTime;
+        if (ShieldValue.Value <= 0)
         {
             BreakShield();
         }
@@ -108,14 +108,14 @@ public class CharacterShield : MonoBehaviour
     private void BreakShield()
     {
         ShieldBreak.Raise();
-        IsShielding.RuntimeValue = false;
+        IsShielding.Value = false;
         currentState = ShieldState.recovering;
     }
 
     public void ActivateShieldRequest()
     {
         wantsToReleaseShield = false;
-        if (!wantsToActivateShield && !IsAttacking.RuntimeValue)
+        if (!wantsToActivateShield && !IsAttacking.Value)
         {
             StartCoroutine(nameof(ShieldActivationBuffer));
         }
@@ -125,7 +125,7 @@ public class CharacterShield : MonoBehaviour
     {
         if (wantsToActivateShield)
         {
-            IsShielding.RuntimeValue = true;
+            IsShielding.Value = true;
             wantsToActivateShield = false;
             StopCoroutine(nameof(ShieldActivationBuffer));
             StartCoroutine(nameof(ShieldStun));
@@ -142,31 +142,31 @@ public class CharacterShield : MonoBehaviour
         if (wantsToReleaseShield)
         {
             wantsToReleaseShield = false;
-            IsShielding.RuntimeValue = false;
+            IsShielding.Value = false;
             StartCoroutine(nameof(ReleaseShield));
         }
     }
     private IEnumerator ShieldStun()
     {
         currentState = ShieldState.shieldStunned;
-        yield return new WaitForSeconds(ShieldStunTime.RuntimeValue);
+        yield return new WaitForSeconds(ShieldStunTime.Value);
         currentState = ShieldState.shielding;
     }
 
     private IEnumerator ReleaseShield()
     {
         currentState = ShieldState.releasing;
-        IsPerfectShielding.RuntimeValue = true;
-        yield return new WaitForSeconds(PerfectShieldTime.RuntimeValue);
-        IsPerfectShielding.RuntimeValue = false;
-        yield return new WaitForSeconds(ShieldCooldownTime.RuntimeValue);
+        IsPerfectShielding.Value = true;
+        yield return new WaitForSeconds(PerfectShieldTime.Value);
+        IsPerfectShielding.Value = false;
+        yield return new WaitForSeconds(ShieldCooldownTime.Value);
         currentState = ShieldState.regenerating;
     }
 
     private IEnumerator ShieldActivationBuffer()
     {
         wantsToActivateShield = true;
-        yield return new WaitForSeconds(ShieldActivationBufferTimer.RuntimeValue);
+        yield return new WaitForSeconds(ShieldActivationBufferTimer.Value);
         wantsToActivateShield = false;
     }
 }

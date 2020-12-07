@@ -21,12 +21,12 @@ public class HorizontalMovement : MovementEffect
 
     public void Move(float X)
     {
-        XValue.RuntimeValue = X;
+        XValue.Value = X;
         Vector2 direction = lastDirection;
 
         if (X > 0)
         {
-            if (!IsAttacking.RuntimeValue)
+            if (!IsAttacking.Value)
             {
                 Body.transform.localRotation = Quaternion.identity;
             }
@@ -34,7 +34,7 @@ public class HorizontalMovement : MovementEffect
         }
         else if (X < 0)
         {
-            if (!IsAttacking.RuntimeValue)
+            if (!IsAttacking.Value)
             {
                 Body.transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
@@ -49,30 +49,30 @@ public class HorizontalMovement : MovementEffect
     {
         float targetSpeed;
 
-        if (IsShielding.RuntimeValue)
+        if (IsShielding.Value)
         {
-            targetSpeed = ShieldingMoveSpeed.RuntimeValue;
+            targetSpeed = ShieldingMoveSpeed.Value;
         }
-        else if (IsAttacking.RuntimeValue && !IsJumping.RuntimeValue)
+        else if (IsAttacking.Value && !IsJumping.Value)
         {
-            targetSpeed = AttackingMoveSpeed.RuntimeValue;
+            targetSpeed = AttackingMoveSpeed.Value;
         }
         else
         {
-            targetSpeed = MovementSpeed.RuntimeValue;
+            targetSpeed = MovementSpeed.Value;
         }
 
-        if (XValue.RuntimeValue == 0)
+        if (XValue.Value == 0)
         {
             targetSpeed = 0;
         }
-        currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, Acceleration.RuntimeValue * DeltaTime.RuntimeValue);
+        currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, Acceleration.Value * DeltaTime.Value);
         currentSpeed = Mathf.Max(0, currentSpeed);
     }
 
     private void ApplySpeed(Vector2 direction)
     {
-        pMovement = direction * currentSpeed * DeltaTime.RuntimeValue;
+        pMovement = direction * currentSpeed * DeltaTime.Value;
         lastDirection = direction;
     }
 }

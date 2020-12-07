@@ -26,19 +26,19 @@ public class JumpMovement : MovementEffect
 
     private void Start()
     {
-        Yvelocity.RuntimeValue = 0;
+        Yvelocity.Value = 0;
     }
 
     public void Jump()
     {
-        if (IsAttacking.RuntimeValue && !isAirborne.RuntimeValue) { return; }
-        if (jumpAmount.RuntimeValue > 0)
+        if (IsAttacking.Value && !isAirborne.Value) { return; }
+        if (jumpAmount.Value > 0)
         {
-            isAirborne.RuntimeValue = true;
+            isAirborne.Value = true;
             isJumping = true;
-            IncreaseJumpTime.RuntimeValue = IncreaseJumpTime.InitialValue;
-            Yvelocity.RuntimeValue = JumpForce.RuntimeValue;
-            jumpAmount.RuntimeValue--;
+            IncreaseJumpTime.Value = IncreaseJumpTime.InitialValue;
+            Yvelocity.Value = JumpForce.Value;
+            jumpAmount.Value--;
         }
     }
 
@@ -53,7 +53,7 @@ public class JumpMovement : MovementEffect
         {
             ApplyGravity();
         }
-        if (Yvelocity.RuntimeValue <= 0)
+        if (Yvelocity.Value <= 0)
         {
             CheckGround();
         }
@@ -67,9 +67,9 @@ public class JumpMovement : MovementEffect
 
     private void IncreaseJump()
     {
-        Yvelocity.RuntimeValue += IncreasedJumpForcePerSec.RuntimeValue * DeltaTime.RuntimeValue;
-        IncreaseJumpTime.RuntimeValue -= DeltaTime.RuntimeValue;
-        if (IncreaseJumpTime.RuntimeValue <= 0)
+        Yvelocity.Value += IncreasedJumpForcePerSec.Value * DeltaTime.Value;
+        IncreaseJumpTime.Value -= DeltaTime.Value;
+        if (IncreaseJumpTime.Value <= 0)
         {
             isJumping = false;
         }
@@ -77,34 +77,34 @@ public class JumpMovement : MovementEffect
 
     private void CheckGround()
     {
-        if (Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 2f), new Vector2(transform.position.x + 0.5f, transform.position.y - 2.01f), groundLayer.RuntimeValue) != null)
+        if (Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 2f), new Vector2(transform.position.x + 0.5f, transform.position.y - 2.01f), groundLayer.Value) != null)
         {
             if (isAirborne)
             {
-                isAirborne.RuntimeValue = false;
-                Yvelocity.RuntimeValue = 0;
-                jumpAmount.RuntimeValue = jumpAmount.InitialValue;
+                isAirborne.Value = false;
+                Yvelocity.Value = 0;
+                jumpAmount.Value = jumpAmount.InitialValue;
             }
         }
         else
         {
             if (!isAirborne)
             {
-                jumpAmount.RuntimeValue--;
-                isAirborne.RuntimeValue = true;
+                jumpAmount.Value--;
+                isAirborne.Value = true;
             }
         }
     }
 
     private void ApplyGravity()
     {
-        Yvelocity.RuntimeValue -= (Yvelocity.RuntimeValue > 0 ? RisingGravity.RuntimeValue : FallingGravity.RuntimeValue) * DeltaTime.RuntimeValue;
-        Yvelocity.RuntimeValue = Mathf.Max(Yvelocity.RuntimeValue, terminalVelocity);
+        Yvelocity.Value -= (Yvelocity.Value > 0 ? RisingGravity.Value : FallingGravity.Value) * DeltaTime.Value;
+        Yvelocity.Value = Mathf.Max(Yvelocity.Value, terminalVelocity);
     }
 
     private void ApplyForce()
     {
-        pMovement = Yvelocity.RuntimeValue * Vector2.up * DeltaTime.RuntimeValue;
+        pMovement = Yvelocity.Value * Vector2.up * DeltaTime.Value;
     }
 
     private void OnDrawGizmos()

@@ -31,15 +31,15 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        DeltaTime.RuntimeValue = Time.deltaTime * TimeScale.RuntimeValue;
+        DeltaTime.Value = Time.deltaTime * TimeScale.Value;
     }
 
     private IEnumerator FreezeFrame(float time)
     {
         isFreezingFrame = true;
-        TimeScale.RuntimeValue = 0;
+        TimeScale.Value = 0;
         yield return new WaitForSeconds(time);
-        TimeScale.RuntimeValue = TimeScale.InitialValue;
+        TimeScale.Value = TimeScale.InitialValue;
         isFreezingFrame = false;
     }
 }

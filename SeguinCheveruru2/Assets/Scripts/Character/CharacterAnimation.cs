@@ -32,7 +32,7 @@ public class CharacterAnimation : MonoBehaviour
 
     private void KnockBackRequestHandler(KnockBackData obj)
     {
-        if (!IsShielding.RuntimeValue)
+        if (!IsShielding.Value)
         {
             Anim.SetTrigger("Damaged");
         }
@@ -42,14 +42,14 @@ public class CharacterAnimation : MonoBehaviour
     {
         if (!Anim.GetBool("IsMoving"))
         {
-            if (XMovement.RuntimeValue != 0)
+            if (XMovement.Value != 0)
             {
                 Anim.SetBool("IsMoving", true);
             }
         }
         else
         {
-            if (XMovement.RuntimeValue == 0)
+            if (XMovement.Value == 0)
             {
                 Anim.SetBool("IsMoving", false);
             }

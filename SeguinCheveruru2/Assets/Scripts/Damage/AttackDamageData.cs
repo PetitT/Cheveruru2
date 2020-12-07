@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class AttackData : ScriptableObject
+public class AttackDamageData : ScriptableObject
 {
     public FloatValue HealthDamage;
     public FloatValue ShieldDamage;

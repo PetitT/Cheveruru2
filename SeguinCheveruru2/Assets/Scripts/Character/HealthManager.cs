@@ -22,16 +22,16 @@ public class HealthManager : MonoBehaviour
 
     private void HealthGainedHandler(float obj)
     {
-        CurrentHealth.RuntimeValue += obj;
-        CurrentHealth.RuntimeValue = Mathf.Min(CurrentHealth.RuntimeValue, CurrentHealth.InitialValue);
+        CurrentHealth.Value += obj;
+        CurrentHealth.Value = Mathf.Min(CurrentHealth.Value, CurrentHealth.InitialValue);
     }
 
     private void DamageTakenhandler(float obj)
     {
-        CurrentHealth.RuntimeValue -= obj;
-        CurrentHealth.RuntimeValue = Mathf.Max(CurrentHealth.RuntimeValue, 0);
+        CurrentHealth.Value -= obj;
+        CurrentHealth.Value = Mathf.Max(CurrentHealth.Value, 0);
 
-        if(CurrentHealth.RuntimeValue == 0)
+        if(CurrentHealth.Value == 0)
         {
             OnDeath.Raise();
         }

@@ -21,35 +21,35 @@ public class CharacterCollision : MonoBehaviour
     {
         if (col.TryGetComponent(out DamageDealer damageDealer))
         {
-            if (shieldValue.RuntimeValue)
+            if (shieldValue.Value)
             {
                 Debug.Log("Shielded");
-                FreezeFrameRequest.Raise(ShieldedFreezeFrame.RuntimeValue);
+                FreezeFrameRequest.Raise(ShieldedFreezeFrame.Value);
 
                 KnockBackData knockback = new KnockBackData()
                 {
-                    force = damageDealer.attackData.ShieldedKnockBack.RuntimeValue,
+                    force = damageDealer.attackData.ShieldedKnockBack.Value,
                     direction = transform.position - col.transform.position.normalized
                 };
                 KnockBackRequest.Raise(knockback);
-                ShieldDamageRequest.Raise(damageDealer.attackData.ShieldDamage.RuntimeValue);
+                ShieldDamageRequest.Raise(damageDealer.attackData.ShieldDamage.Value);
             }
-            else if (perfectShieldValue.RuntimeValue)
+            else if (perfectShieldValue.Value)
             {
                 Debug.Log("Perfect Shielded");
-                FreezeFrameRequest.Raise(PerfectShieldedFreezeFrame.RuntimeValue);
+                FreezeFrameRequest.Raise(PerfectShieldedFreezeFrame.Value);
             }
             else
             {
                 Debug.Log("Hit");
-                FreezeFrameRequest.Raise(DamageTakenFreezeFrame.RuntimeValue);
+                FreezeFrameRequest.Raise(DamageTakenFreezeFrame.Value);
                 KnockBackData knockback = new KnockBackData()
                 {
-                    force = damageDealer.attackData.UnshieldedKnockBack.RuntimeValue,
+                    force = damageDealer.attackData.UnshieldedKnockBack.Value,
                     direction = transform.position - col.transform.position.normalized
                 };
                 KnockBackRequest.Raise(knockback);
-                HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage.RuntimeValue);
+                HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage.Value);
             }
         }
     }

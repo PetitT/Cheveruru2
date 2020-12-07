@@ -9,7 +9,7 @@ public abstract class ScriptableValue<T> : ScriptableObject, ISerializationCallb
     [SerializeField]
     private T runtimeValue;
 
-    public T RuntimeValue
+    public T Value
     {
         get
         {
@@ -18,7 +18,7 @@ public abstract class ScriptableValue<T> : ScriptableObject, ISerializationCallb
         set
         {
             runtimeValue = value;
-            onValueChanged?.Invoke(RuntimeValue);
+            onValueChanged?.Invoke(this.Value);
         }
     }
 
@@ -26,7 +26,7 @@ public abstract class ScriptableValue<T> : ScriptableObject, ISerializationCallb
 
     public void OnAfterDeserialize()
     {
-        RuntimeValue = InitialValue;
+        Value = InitialValue;
     }
 
     public void OnBeforeSerialize() { }
