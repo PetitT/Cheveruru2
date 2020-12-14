@@ -27,7 +27,14 @@ public class CharacterAnimation : MonoBehaviour
 
     private void ShieldHandler(bool obj)
     {
-        Anim.SetBool("IsParying", obj);
+        if (obj)
+        {
+            Anim.SetTrigger("Parry");
+        }
+        else
+        {
+            Anim.SetTrigger("CancelParry");
+        }
     }
 
     private void KnockBackRequestHandler(KnockBackData obj)

@@ -13,7 +13,7 @@ public class HorizontalMovement : MovementEffect
     public BoolValue IsShielding;
     public BoolValue IsAttacking;
     public BoolValue IsJumping;
-    public GameObject Body;
+    public SpriteRenderer Body;
 
     private float currentSpeed;
 
@@ -28,7 +28,7 @@ public class HorizontalMovement : MovementEffect
         {
             if (!IsAttacking.Value)
             {
-                Body.transform.localRotation = Quaternion.identity;
+                Body.flipX = false;
             }
             direction = Vector2.right;
         }
@@ -36,7 +36,7 @@ public class HorizontalMovement : MovementEffect
         {
             if (!IsAttacking.Value)
             {
-                Body.transform.localRotation = Quaternion.Euler(0, 180, 0);
+                Body.flipX = true;
             }
             direction = Vector2.left;
         }

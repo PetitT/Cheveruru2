@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.WSA.Input;
 
 public class JumpMovement : MovementEffect
 {
@@ -16,8 +15,8 @@ public class JumpMovement : MovementEffect
     public IntValue jumpAmount;
     public LayerValue groundLayer;
     public BoolValue IsAttacking;
-    public Transform groundCheck;
-    public float distanceFromGround;
+    //public Transform groundCheck;
+    //public float distanceFromGround;
 
     public FloatValue Yvelocity;
     public float terminalVelocity;
@@ -77,7 +76,7 @@ public class JumpMovement : MovementEffect
 
     private void CheckGround()
     {
-        if (Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 2f), new Vector2(transform.position.x + 0.5f, transform.position.y - 2.01f), groundLayer.Value) != null)
+        if (Physics2D.OverlapArea(new Vector2(transform.position.x - 2f, transform.position.y - 4f), new Vector2(transform.position.x + 2f, transform.position.y - 4.2f), groundLayer.Value) != null)
         {
             if (isAirborne)
             {
