@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: JumpAmount
   m_EditorClassIdentifier: 
   InitialValue: 2
+  runtimeValue: 2
