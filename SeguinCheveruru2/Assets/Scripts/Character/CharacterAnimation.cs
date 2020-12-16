@@ -42,7 +42,6 @@ public class CharacterAnimation : MonoBehaviour
 
     private void PerfectShieldHandler()
     {
-        Debug.Log("Hiku");
         Anim.SetTrigger("PerfectParry");
     }
 

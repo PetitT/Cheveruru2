@@ -14,6 +14,24 @@ TextureImporter:
   - first:
       213: 1224893256467122471
     second: GoatAttackTwo_3
+  - first:
+      213: -1696610045781329163
+    second: GoatAttackTwo_0
+  - first:
+      213: -6529626932699372696
+    second: GoatAttackTwo_1
+  - first:
+      213: 333174798571245551
+    second: GoatAttackTwo_2
+  - first:
+      213: -7198304029461890100
+    second: GoatAttackTwo_3
+  - first:
+      213: -8049838920084728735
+    second: GoatAttackTwo_4
+  - first:
+      213: 4608504001137589112
+    second: GoatAttackTwo_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -153,6 +171,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 1280
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa38d2072e6478e0800000000000000
+      internalID: -1696610045781329163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoatAttackTwo_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86361a076ea1265a0800000000000000
+      internalID: -6529626932699372696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoatAttackTwo_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 640
         width: 640
         height: 640
@@ -163,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6508d2f86ea10d880800000000000000
-      internalID: -8588334911848611754
+      spriteID: fef83fcc6bcaf9400800000000000000
+      internalID: 333174798571245551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoatAttackTwo_1
+      name: GoatAttackTwo_3
       rect:
         serializedVersion: 2
         x: 640
@@ -184,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e87e2340b9a003be0800000000000000
-      internalID: -1499687015007721586
+      spriteID: ccb39aa9f9c7a1c90800000000000000
+      internalID: -7198304029461890100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoatAttackTwo_2
+      name: GoatAttackTwo_4
       rect:
         serializedVersion: 2
         x: 0
@@ -205,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d628675ea9c5da30800000000000000
-      internalID: 4239516374867125970
+      spriteID: 1645c3de62a394090800000000000000
+      internalID: -8049838920084728735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoatAttackTwo_3
+      name: GoatAttackTwo_5
       rect:
         serializedVersion: 2
         x: 640
@@ -226,8 +286,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7298e7f4de1bff010800000000000000
-      internalID: 1224893256467122471
+      spriteID: 87bb5cdd8f1b4ff30800000000000000
+      internalID: 4608504001137589112
       vertices: []
       indices: 
       edges: []

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class BossDirection : Singleton<BossDirection>
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private Transform target = null;
+    [SerializeField] private SpriteRenderer sprite = null;
     public BoolValue isAttacking;
 
     public Vector2 currentDirection => GetDirection();

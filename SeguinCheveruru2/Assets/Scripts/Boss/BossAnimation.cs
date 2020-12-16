@@ -6,7 +6,7 @@ public class BossAnimation : Singleton<BossAnimation>
 {
     public enum BossAnim { GroundIdle, StandingIdle, Run }
 
-    [SerializeField] private Animator anim;
+    [SerializeField] private Animator anim = null;
 
     public void Animate(BossAnim animation)
     {

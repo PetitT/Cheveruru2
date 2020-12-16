@@ -1,0 +1,1 @@
+﻿public enum DamageOrigin { allied, ennemy}

@@ -17,6 +17,27 @@ TextureImporter:
   - first:
       213: -2579218425800868236
     second: GoatAttackOne_4
+  - first:
+      213: -6459766764018035472
+    second: GoatAttackOne_0
+  - first:
+      213: -8096537757039341664
+    second: GoatAttackOne_1
+  - first:
+      213: 5007709195847601757
+    second: GoatAttackOne_2
+  - first:
+      213: -4588820769891998335
+    second: GoatAttackOne_3
+  - first:
+      213: 5472045060416842424
+    second: GoatAttackOne_4
+  - first:
+      213: -2250702166754712594
+    second: GoatAttackOne_5
+  - first:
+      213: -4283869668577107684
+    second: GoatAttackOne_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -166,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9de8291d3621ada0800000000000000
-      internalID: -5935420790040629862
+      spriteID: 0f494da7a5c4a56a0800000000000000
+      internalID: -6459766764018035472
       vertices: []
       indices: 
       edges: []
@@ -187,14 +208,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e3a30fffd2b597f0800000000000000
-      internalID: -606381899685583900
+      spriteID: 0afc129aec153af80800000000000000
+      internalID: -8096537757039341664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: GoatAttackOne_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e04fc4bf4fe7540800000000000000
+      internalID: 5007709195847601757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoatAttackOne_3
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3651fa878c58d2ef0800000000000000
-      internalID: -131301718059182749
+      spriteID: 18527a882db3150c0800000000000000
+      internalID: -4588820769891998335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoatAttackOne_3
+      name: GoatAttackOne_4
       rect:
         serializedVersion: 2
         x: 640
@@ -229,14 +271,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c9b469da97a88950800000000000000
-      internalID: 6451590749722294722
+      spriteID: 8baa3158dfb90fb40800000000000000
+      internalID: 5472045060416842424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoatAttackOne_4
+      name: GoatAttackOne_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee32267dd46e3c0e0800000000000000
+      internalID: -2250702166754712594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoatAttackOne_6
       rect:
         serializedVersion: 2
         x: 0
@@ -250,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47e3ffbc186c43cd0800000000000000
-      internalID: -2579218425800868236
+      spriteID: c11246cbb33ac84c0800000000000000
+      internalID: -4283869668577107684
       vertices: []
       indices: 
       edges: []

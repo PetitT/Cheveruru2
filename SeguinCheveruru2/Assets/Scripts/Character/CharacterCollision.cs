@@ -23,28 +23,31 @@ public class CharacterCollision : MonoBehaviour
     {
         if (col.TryGetComponent(out DamageDealer damageDealer))
         {
+            if (damageDealer.currentOrigin == DamageOrigin.allied) { return; }
             if (shieldValue.Value)
             {
-                Debug.Log("Shielded");
                 FreezeFrameRequest.Raise(ShieldedFreezeFrame.Value);
                 RequestKnockback(damageDealer.attackData.ShieldedKnockBack, col);
                 ShieldDamageRequest.Raise(damageDealer.attackData.ShieldDamage);
+                damageDealer.gameObject.SetActive(false);
             }
             else if (perfectShieldValue.Value)
             {
-                Debug.Log("Perfect Shielded");
                 FreezeFrameRequest.Raise(PerfectShieldedFreezeFrame.Value);
                 PerfectParryEvent.Raise();
+                if (col.TryGetComponent(out IRevertableProjectile revert))
+                {
+                    revert.OnRevert();
+                }
             }
             else
             {
-                Debug.Log("Hit");
                 FreezeFrameRequest.Raise(DamageTakenFreezeFrame.Value);
                 RequestKnockback(damageDealer.attackData.UnshieldedKnockBack, col);
                 HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage);
+                damageDealer.gameObject.SetActive(false);
             }
 
-            damageDealer.gameObject.SetActive(false);
         }
     }
 
