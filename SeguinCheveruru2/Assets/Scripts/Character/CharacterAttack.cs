@@ -38,7 +38,6 @@ public class CharacterAttack : MonoBehaviour
     {
         if (!IsAttacking.Value && wantsToAttack)
         {
-            Debug.Log("Hiku");
             wantsToAttack = false;
             IsAttacking.Value = true;
             anim.SetTrigger("Attack");

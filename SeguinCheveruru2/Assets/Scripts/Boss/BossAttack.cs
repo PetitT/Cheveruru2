@@ -5,7 +5,5 @@ using UnityEngine;
 
 public abstract class BossAttack : MonoBehaviour
 {
-    public DamageDealer damageDealer;
-
     public abstract IEnumerator Attack(Action onFinish);
 }

@@ -9,11 +9,13 @@ public class CharacterAnimation : MonoBehaviour
     public BoolValue IsAirborne;
     public Animator Anim;
     public BoolValue IsShielding;
+    public GameEvent OnPerfectParry;
     public KnockBackGameEvent KnockBackRequest;
 
     private void Awake()
     {
         IsShielding.onValueChanged += ShieldHandler;
+        OnPerfectParry.onEventRaised += PerfectShieldHandler;
         IsAirborne.onValueChanged += AirborneValueChangedHandler;
         KnockBackRequest.onEventRaised += KnockBackRequestHandler;
     }
@@ -21,6 +23,7 @@ public class CharacterAnimation : MonoBehaviour
     private void OnDestroy()
     {
         IsShielding.onValueChanged -= ShieldHandler;
+        OnPerfectParry.onEventRaised -= PerfectShieldHandler;
         IsAirborne.onValueChanged -= AirborneValueChangedHandler;
         KnockBackRequest.onEventRaised -= KnockBackRequestHandler;
     }
@@ -35,6 +38,12 @@ public class CharacterAnimation : MonoBehaviour
         {
             Anim.SetTrigger("CancelParry");
         }
+    }
+
+    private void PerfectShieldHandler()
+    {
+        Debug.Log("Hiku");
+        Anim.SetTrigger("PerfectParry");
     }
 
     private void KnockBackRequestHandler(KnockBackData obj)

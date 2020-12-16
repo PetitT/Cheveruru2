@@ -24,6 +24,11 @@ public static class VectorExtensions
         return new Vector2(vector2.x, newY);
     }
 
+    public static Vector2 Grounded(this Vector2 vector2)
+    {
+        return new Vector2(vector2.x, 0);
+    }
+
     /// <summary>
     /// Replaces the Y value with 0
     /// </summary>

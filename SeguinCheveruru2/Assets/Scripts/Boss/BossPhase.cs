@@ -6,5 +6,5 @@ using UnityEngine;
 public class BossPhase 
 {
     public List<BossAttack> attacks;
-    public Vector2Value timeBetweenAttacks;
+    public Vector2 timeBetweenAttacks;
 }

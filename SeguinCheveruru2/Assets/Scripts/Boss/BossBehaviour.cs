@@ -6,16 +6,17 @@ using UnityEngine;
 public class BossBehaviour : MonoBehaviour
 {
     public FloatValue deltaTime;
+    public BoolValue isAttacking;
+
     public List<BossPhase> phases;
     private int currentPhaseIndex = 0;
     private BossPhase currentPhase => phases[currentPhaseIndex];
 
-    private BoolValue canAttack;
     private float remainingTimeToAttack;
 
     private void Awake()
     {
-        remainingTimeToAttack = currentPhase.timeBetweenAttacks.Value.RandomRange();
+        remainingTimeToAttack = currentPhase.timeBetweenAttacks.RandomRange();
     }
 
     private void Update()
@@ -25,13 +26,13 @@ public class BossBehaviour : MonoBehaviour
 
     private void CheckAttack()
     {
-        if (!canAttack.Value) { return; }
+        if (isAttacking.Value) { return; }
         remainingTimeToAttack -= deltaTime.Value;
-        if(remainingTimeToAttack <= 0)
+        if (remainingTimeToAttack <= 0)
         {
-            canAttack.Value = false;
-            remainingTimeToAttack = currentPhase.timeBetweenAttacks.Value.RandomRange();
-            StartCoroutine(currentPhase.attacks.GetRandom().Attack(() => canAttack.Value = true));
+            isAttacking.Value = true;
+            remainingTimeToAttack = currentPhase.timeBetweenAttacks.RandomRange();
+            StartCoroutine(currentPhase.attacks.GetRandom().Attack(() => isAttacking.Value = false));
         }
     }
 }

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 692e221eac1027b499a28733f6b9ede5, type: 3}
-  m_Name: Phase0
+  m_Script: {fileID: 11500000, guid: da238a6ae80f30747b694dc047cb2f62, type: 3}
+  m_Name: Speed
   m_EditorClassIdentifier: 
-  attacks: []
-  timeBetweenAttacks: {fileID: 11400000, guid: f0fa81c4012ab72438aea50cceed3fa5, type: 2}
+  InitialValue: 40
+  runtimeValue: 40

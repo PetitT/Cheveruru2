@@ -9,9 +9,11 @@ public class CharacterCollision : MonoBehaviour
     public FloatValue ShieldedFreezeFrame;
     public FloatValue PerfectShieldedFreezeFrame;
 
+
     public BoolValue shieldValue;
     public BoolValue perfectShieldValue;
 
+    public GameEvent PerfectParryEvent;
     public FloatGameEvent FreezeFrameRequest;
     public KnockBackGameEvent KnockBackRequest;
     public FloatGameEvent HealthDamageRequest;
@@ -25,32 +27,34 @@ public class CharacterCollision : MonoBehaviour
             {
                 Debug.Log("Shielded");
                 FreezeFrameRequest.Raise(ShieldedFreezeFrame.Value);
-
-                KnockBackData knockback = new KnockBackData()
-                {
-                    force = damageDealer.attackData.ShieldedKnockBack.Value,
-                    direction = transform.position - col.transform.position.normalized
-                };
-                KnockBackRequest.Raise(knockback);
-                ShieldDamageRequest.Raise(damageDealer.attackData.ShieldDamage.Value);
+                RequestKnockback(damageDealer.attackData.ShieldedKnockBack, col);
+                ShieldDamageRequest.Raise(damageDealer.attackData.ShieldDamage);
             }
             else if (perfectShieldValue.Value)
             {
                 Debug.Log("Perfect Shielded");
                 FreezeFrameRequest.Raise(PerfectShieldedFreezeFrame.Value);
+                PerfectParryEvent.Raise();
             }
             else
             {
                 Debug.Log("Hit");
                 FreezeFrameRequest.Raise(DamageTakenFreezeFrame.Value);
-                KnockBackData knockback = new KnockBackData()
-                {
-                    force = damageDealer.attackData.UnshieldedKnockBack.Value,
-                    direction = transform.position - col.transform.position.normalized
-                };
-                KnockBackRequest.Raise(knockback);
-                HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage.Value);
+                RequestKnockback(damageDealer.attackData.UnshieldedKnockBack, col);
+                HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage);
             }
+
+            damageDealer.gameObject.SetActive(false);
         }
+    }
+
+    private void RequestKnockback(float force, Collider2D col)
+    {
+        KnockBackData knockback = new KnockBackData()
+        {
+            force = force,
+            direction = (transform.position.Grounded() - col.transform.position.Grounded())
+        };
+        KnockBackRequest.Raise(knockback);
     }
 }

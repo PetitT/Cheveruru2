@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class AttackDamageData : ScriptableObject
 {
-    public FloatValue HealthDamage;
-    public FloatValue ShieldDamage;
+    public float HealthDamage;
+    public float ShieldDamage;
 
-    public FloatValue UnshieldedKnockBack;
-    public FloatValue ShieldedKnockBack;
+    public float UnshieldedKnockBack;
+    public float ShieldedKnockBack;
 }
