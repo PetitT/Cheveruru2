@@ -20,6 +20,7 @@ public class CharacterShield : MonoBehaviour
     public BoolValue IsAttacking;
 
     public GameEvent ShieldBreak;
+    public GameEvent ShieldRegained;
     public FloatGameEvent ShieldDamageTaken;
 
     private bool wantsToActivateShield = false;
@@ -91,6 +92,7 @@ public class CharacterShield : MonoBehaviour
         ShieldValue.Value += Time.deltaTime * ShieldGainPerSec.Value;
         if (ShieldValue.Value >= ShieldValue.InitialValue)
         {
+            ShieldRegained.Raise();
             ShieldValue.Value = ShieldValue.InitialValue;
             currentState = ShieldState.fullShield;
         }

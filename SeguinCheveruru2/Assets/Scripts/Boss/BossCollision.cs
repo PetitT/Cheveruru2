@@ -8,11 +8,14 @@ public class BossCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent(out DamageDealer damageDealer))
+        if (collision.TryGetComponent(out DamageDealer damageDealer))
         {
-            if(damageDealer.currentOrigin == DamageOrigin.ennemy) { return; }
+            if (damageDealer.currentOrigin == DamageOrigin.ennemy) { return; }
             HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage);
-            damageDealer.gameObject.SetActive(false);
+            if (collision.TryGetComponent(out IRevertableProjectile revertableProjectile))
+            {
+                collision.gameObject.SetActive(false);
+            }
         }
     }
 }

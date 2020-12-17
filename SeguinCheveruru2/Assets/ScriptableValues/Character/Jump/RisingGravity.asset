@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da238a6ae80f30747b694dc047cb2f62, type: 3}
   m_Name: RisingGravity
   m_EditorClassIdentifier: 
-  InitialValue: 100
-  runtimeValue: 100
+  InitialValue: 250
+  runtimeValue: 250
