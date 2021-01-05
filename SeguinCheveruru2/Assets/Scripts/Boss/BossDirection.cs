@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class BossDirection : Singleton<BossDirection>
 {
-    [SerializeField] private Transform target = null;
-    [SerializeField] private SpriteRenderer sprite = null;
-    public BoolValue isAttacking;
+    public Transform target;
+    private bool canRotate = true;
 
     public Vector2 currentDirection => GetDirection();
     private Vector2 GetDirection()
@@ -24,18 +23,19 @@ public class BossDirection : Singleton<BossDirection>
 
     private void Update()
     {
-        if (!isAttacking.Value)
+        if (!canRotate) { return; }
+        if (GetDirection() == Vector2.right)
         {
-            if (GetDirection() == Vector2.right)
-            {
-                sprite.flipX = true;
-            }
-            else
-            {
-                sprite.flipX = false;
-            }
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
-
+    public void ToggleRotation(bool toggle)
+    {
+        canRotate = toggle;
+    }
 }

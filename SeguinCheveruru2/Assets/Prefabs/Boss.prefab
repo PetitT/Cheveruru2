@@ -28,9 +28,75 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 736920392}
+  - {fileID: 321719829}
+  - {fileID: 6551650577308891670}
+  - {fileID: 6717641990367782913}
   m_Father: {fileID: 1133731725350915121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &321719828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321719829}
+  - component: {fileID: 321719831}
+  - component: {fileID: 321719830}
+  m_Layer: 0
+  m_Name: ClawOneHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &321719829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321719828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 240455690}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &321719831
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321719828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.7366347, y: 2.5737696}
+  m_Size: {x: 14.5561, y: 21.96841}
+  m_Direction: 0
+--- !u!114 &321719830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321719828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff28c1bb4aee500409884432f3c1ac3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultOrigin: 1
+  attackData: {fileID: 11400000, guid: a9fe266d2d293b04bb58415e4ca0f0f5, type: 2}
+  currentOrigin: 0
 --- !u!1 &619445601
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +190,132 @@ MonoBehaviour:
   defaultOrigin: 1
   attackData: {fileID: 11400000, guid: c8d8cd6053389634bb158840c79503f9, type: 2}
   currentOrigin: 0
+--- !u!1 &563442946686140118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6717641990367782913}
+  - component: {fileID: 9026425200782493461}
+  - component: {fileID: 8588953735134050221}
+  m_Layer: 0
+  m_Name: ClawThreeHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6717641990367782913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563442946686140118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 240455690}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &9026425200782493461
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563442946686140118}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.7366347, y: 2.5737696}
+  m_Size: {x: 14.5561, y: 21.96841}
+  m_Direction: 0
+--- !u!114 &8588953735134050221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563442946686140118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff28c1bb4aee500409884432f3c1ac3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultOrigin: 1
+  attackData: {fileID: 11400000, guid: c686d3704fb21d14c849654858f184be, type: 2}
+  currentOrigin: 0
+--- !u!1 &2134836154359938730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6551650577308891670}
+  - component: {fileID: 8535895849738536390}
+  - component: {fileID: 6965285309596472860}
+  m_Layer: 0
+  m_Name: ClawTwoHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6551650577308891670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134836154359938730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 240455690}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &8535895849738536390
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134836154359938730}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.7366347, y: 2.5737696}
+  m_Size: {x: 14.5561, y: 21.96841}
+  m_Direction: 0
+--- !u!114 &6965285309596472860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134836154359938730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff28c1bb4aee500409884432f3c1ac3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultOrigin: 1
+  attackData: {fileID: 11400000, guid: bcd0aed0ee5bfa14b94f2ee0e3250ae0, type: 2}
+  currentOrigin: 0
 --- !u!1 &6503156322403922463
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +338,9 @@ GameObject:
   - component: {fileID: 573377408361839434}
   - component: {fileID: 3315526196045693894}
   - component: {fileID: 3594117594486691928}
+  - component: {fileID: 2131286883}
+  - component: {fileID: 321598677478292993}
+  - component: {fileID: 6302898300672322372}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -273,8 +468,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.8748968, y: -0.73586845}
-  m_Size: {x: 19.281693, y: 19.281693}
+  m_Offset: {x: -2.5490265, y: 0.022363663}
+  m_Size: {x: 12.877485, y: 16.754234}
   m_Direction: 0
 --- !u!114 &3315526196045693888
 MonoBehaviour:
@@ -283,18 +478,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6503156322403922463}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0b0427fa85e4e94eaf8009d6903f2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   deltaTime: {fileID: 11400000, guid: 5e8d8e22bbb7cd042be3c8a8b141e7ce, type: 2}
+  bossHealth: {fileID: 11400000, guid: ffcc740dff531b04887659b3c7460274, type: 2}
   isAttacking: {fileID: 11400000, guid: ee970cbf6c4d97d4297e1f2e2b702244, type: 2}
   phases:
-  - attacks:
-    - {fileID: 573377408361839434}
-    - {fileID: 3594117594486691928}
-    - {fileID: 3315526196045693894}
+  - threshold: 0
+    attacks:
+    - {fileID: 321598677478292993}
     timeBetweenAttacks: {x: 2, y: 3}
 --- !u!114 &3315526196045693892
 MonoBehaviour:
@@ -322,8 +517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  sprite: {fileID: 7520853810916897934}
-  isAttacking: {fileID: 11400000, guid: ee970cbf6c4d97d4297e1f2e2b702244, type: 2}
 --- !u!114 &3315526196045693895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,8 +576,8 @@ MonoBehaviour:
   preWaitTime: 1
   postWaitTime: 1
   timeBetweenThrows: {x: 0.5, y: 1.5}
-  numberOfThrows: {x: 3, y: 5}
-  projectileSpeed: {x: 20, y: 30}
+  numberOfThrows: {x: 5, y: 7}
+  projectileSpeed: {x: 40, y: 50}
 --- !u!114 &3315526196045693894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,3 +616,69 @@ MonoBehaviour:
   timeBetweenThrows: {x: 1, y: 1.5}
   numberOfThrows: {x: 5, y: 5}
   projectileSpeed: {x: 15, y: 20}
+--- !u!114 &2131286883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503156322403922463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458c18b7a80738a4ea1090e4eba86fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 30
+  minDistanceToPlayer: 12
+  windupTime: 0.25
+  hitBoxWaitTime: 0.1
+  endLagTime: 0.25
+  hitBox: {fileID: 321719828}
+--- !u!114 &321598677478292993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503156322403922463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50906fec48970cd42a888c0f9a8442fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 30
+  minDistanceToPlayer: 12
+  windupTime: 0.25
+  hitBoxWaitTime: 0.1
+  endLagTime: 0.25
+  hitBox: {fileID: 321719828}
+  windupTimeTwo: 0.25
+  hitBoxWaitTimeTwo: 0.1
+  endLagTimeTwo: 0.25
+  hitBoxTwo: {fileID: 2134836154359938730}
+--- !u!114 &6302898300672322372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503156322403922463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da5f37b505af4d4d9bb87547315c0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 30
+  minDistanceToPlayer: 12
+  windupTime: 0.25
+  hitBoxWaitTime: 0.1
+  endLagTime: 0.25
+  hitBox: {fileID: 321719828}
+  windupTimeTwo: 0.25
+  hitBoxWaitTimeTwo: 0.1
+  endLagTimeTwo: 0.25
+  hitBoxTwo: {fileID: 2134836154359938730}
+  windupTimeThree: 0.25
+  hitBoxWaitTimeThree: 0.1
+  endLagTimeThree: 0.25
+  hitBoxThree: {fileID: 563442946686140118}

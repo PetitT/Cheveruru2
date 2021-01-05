@@ -6,6 +6,7 @@ using UnityEngine;
 public class BossBehaviour : MonoBehaviour
 {
     public FloatValue deltaTime;
+    public FloatValue bossHealth;
     public BoolValue isAttacking;
 
     public List<BossPhase> phases;
@@ -17,11 +18,26 @@ public class BossBehaviour : MonoBehaviour
     private void Awake()
     {
         remainingTimeToAttack = currentPhase.timeBetweenAttacks.RandomRange();
+        bossHealth.onValueChanged += BossHealthValueChangedHandler;
     }
+
+    private void OnDestroy()
+    {
+        bossHealth.onValueChanged -= BossHealthValueChangedHandler;
+    }
+
 
     private void Update()
     {
         CheckAttack();
+    }
+
+    private void BossHealthValueChangedHandler(float obj)
+    {
+        if (bossHealth.Value / bossHealth.InitialValue < currentPhase.threshold)
+        {
+            currentPhaseIndex++;
+        }
     }
 
     private void CheckAttack()
