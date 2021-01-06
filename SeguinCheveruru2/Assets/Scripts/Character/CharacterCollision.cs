@@ -13,6 +13,8 @@ public class CharacterCollision : MonoBehaviour
     public BoolValue shieldValue;
     public BoolValue perfectShieldValue;
 
+    public GameEvent HitFlashEvent;
+    public GameEvent NormalParryEvent;
     public GameEvent PerfectParryEvent;
     public FloatGameEvent FreezeFrameRequest;
     public KnockBackGameEvent KnockBackRequest;
@@ -26,6 +28,7 @@ public class CharacterCollision : MonoBehaviour
             if (damageDealer.currentOrigin == DamageOrigin.allied) { return; }
             if (shieldValue.Value)
             {
+                NormalParryEvent.Raise();
                 FreezeFrameRequest.Raise(ShieldedFreezeFrame.Value);
                 RequestKnockback(damageDealer.attackData.ShieldedKnockBack, col);
                 ShieldDamageRequest.Raise(damageDealer.attackData.ShieldDamage);
@@ -42,6 +45,8 @@ public class CharacterCollision : MonoBehaviour
             }
             else
             {
+                DisplayBlood(col, damageDealer);
+                HitFlashEvent.Raise();
                 FreezeFrameRequest.Raise(DamageTakenFreezeFrame.Value);
                 RequestKnockback(damageDealer.attackData.UnshieldedKnockBack, col);
                 HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage);
@@ -49,6 +54,13 @@ public class CharacterCollision : MonoBehaviour
             }
 
         }
+    }
+
+    private void DisplayBlood(Collider2D col, DamageDealer damageDealer)
+    {
+        Vector2 direction = damageDealer.transform.rotation == Quaternion.Euler(0, 0, 0) ? Vector2.left : Vector2.right;
+        Vector2 position = damageDealer.GetComponent<Collider2D>().ClosestPoint(transform.position);
+        BloodDisplay.Instance.DisplayBlood(position, direction);
     }
 
     private void RequestKnockback(float force, Collider2D col)

@@ -219,4 +219,4 @@ MonoBehaviour:
   YSpeed: 0
   rotateOnZAxis: 1
   ZRotationMode: 0
-  ZSpeed: 180
+  ZSpeed: 360

@@ -8,7 +8,7 @@ public class BouncingProjectile : Projectile, IRevertableProjectile
     public float heightmultiplicator;
     public float revertSpeedBuff = 3;
     private float currentElapsedTime;
-    private float defaultY = -6.08f;
+    private float defaultY = -1.8f;
 
     private bool wasReverted = false;
 
