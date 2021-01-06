@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 732124549434214903}
   - component: {fileID: 247470370475785243}
   m_Layer: 0
-  m_Name: 'Fang '
+  m_Name: ForwardFang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deltaTime: {fileID: 11400000, guid: 5e8d8e22bbb7cd042be3c8a8b141e7ce, type: 2}
+  revertSpeedBuff: 3
 --- !u!114 &247470370475785243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 95afc6ce932bbc24fb8c377ece33e289, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

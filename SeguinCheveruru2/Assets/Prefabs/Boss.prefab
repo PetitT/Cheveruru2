@@ -31,6 +31,7 @@ Transform:
   - {fileID: 321719829}
   - {fileID: 6551650577308891670}
   - {fileID: 6717641990367782913}
+  - {fileID: 5107246531017759780}
   m_Father: {fileID: 1133731725350915121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79,8 +80,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.7366347, y: 2.5737696}
-  m_Size: {x: 14.5561, y: 21.96841}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.0001, y: 0.0001}
   m_Direction: 0
 --- !u!114 &321719830
 MonoBehaviour:
@@ -235,8 +236,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.7366347, y: 2.5737696}
-  m_Size: {x: 14.5561, y: 21.96841}
+  m_Offset: {x: -13.255984, y: 0}
+  m_Size: {x: 8.444204, y: 0.0001}
   m_Direction: 0
 --- !u!114 &8588953735134050221
 MonoBehaviour:
@@ -298,8 +299,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.7366347, y: 2.5737696}
-  m_Size: {x: 14.5561, y: 21.96841}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.0001, y: 0.0001}
   m_Direction: 0
 --- !u!114 &6965285309596472860
 MonoBehaviour:
@@ -315,6 +316,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultOrigin: 1
   attackData: {fileID: 11400000, guid: bcd0aed0ee5bfa14b94f2ee0e3250ae0, type: 2}
+  currentOrigin: 0
+--- !u!1 &4983464992807015064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5107246531017759780}
+  - component: {fileID: 2205554679476681362}
+  - component: {fileID: 6946801030352160623}
+  m_Layer: 0
+  m_Name: ShunpoHitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5107246531017759780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983464992807015064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 240455690}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &2205554679476681362
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983464992807015064}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.6302128, y: -1.0372524}
+  m_Size: {x: 15.663736, y: 19.788445}
+  m_Direction: 0
+--- !u!114 &6946801030352160623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983464992807015064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff28c1bb4aee500409884432f3c1ac3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultOrigin: 1
+  attackData: {fileID: 11400000, guid: 3f6143b1bcdedb14e92bea0b07038bbb, type: 2}
   currentOrigin: 0
 --- !u!1 &6503156322403922463
 GameObject:
@@ -341,6 +405,7 @@ GameObject:
   - component: {fileID: 2131286883}
   - component: {fileID: 321598677478292993}
   - component: {fileID: 6302898300672322372}
+  - component: {fileID: 3424053913388833082}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -489,7 +554,13 @@ MonoBehaviour:
   phases:
   - threshold: 0
     attacks:
+    - {fileID: 3424053913388833082}
+    timeBetweenAttacks: {x: 2, y: 3}
+  - threshold: 0
+    attacks:
+    - {fileID: 6302898300672322372}
     - {fileID: 321598677478292993}
+    - {fileID: 3594117594486691928}
     timeBetweenAttacks: {x: 2, y: 3}
 --- !u!114 &3315526196045693892
 MonoBehaviour:
@@ -573,6 +644,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2378049846770034440, guid: 76b55222ae8472343ba842a9952e267f, type: 3}
   throwPosition: {fileID: 619445602}
+  leftWall: {fileID: 0}
+  rightWall: {fileID: 0}
+  moveSpeed: 25
+  distanceFromWall: 0.5
   preWaitTime: 1
   postWaitTime: 1
   timeBetweenThrows: {x: 0.5, y: 1.5}
@@ -611,6 +686,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2422623695201811763, guid: 33a461a35adc07f4382886a90735c134, type: 3}
   throwPosition: {fileID: 619445602}
+  leftWall: {fileID: 0}
+  rightWall: {fileID: 0}
+  moveSpeed: 25
+  distanceFromWall: 1
   preWaitTime: 1
   postWaitTime: 1
   timeBetweenThrows: {x: 1, y: 1.5}
@@ -629,9 +708,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 30
-  minDistanceToPlayer: 12
+  minDistanceToPlayerOne: 12
   windupTime: 0.25
-  hitBoxWaitTime: 0.1
   endLagTime: 0.25
   hitBox: {fileID: 321719828}
 --- !u!114 &321598677478292993
@@ -647,13 +725,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 30
-  minDistanceToPlayer: 12
+  minDistanceToPlayerOne: 12
   windupTime: 0.25
-  hitBoxWaitTime: 0.1
   endLagTime: 0.25
   hitBox: {fileID: 321719828}
+  minDistanceToPlayerTwo: 15
   windupTimeTwo: 0.25
-  hitBoxWaitTimeTwo: 0.1
   endLagTimeTwo: 0.25
   hitBoxTwo: {fileID: 2134836154359938730}
 --- !u!114 &6302898300672322372
@@ -669,16 +746,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 30
-  minDistanceToPlayer: 12
+  minDistanceToPlayerOne: 12
   windupTime: 0.25
-  hitBoxWaitTime: 0.1
   endLagTime: 0.25
   hitBox: {fileID: 321719828}
+  minDistanceToPlayerTwo: 15
   windupTimeTwo: 0.25
-  hitBoxWaitTimeTwo: 0.1
   endLagTimeTwo: 0.25
   hitBoxTwo: {fileID: 2134836154359938730}
-  windupTimeThree: 0.25
-  hitBoxWaitTimeThree: 0.1
-  endLagTimeThree: 0.25
+  minDistanceToPlayerThree: 20
+  windupTimeThree: 0.3
+  endLagTimeThree: 0.3
   hitBoxThree: {fileID: 563442946686140118}
+  dashSpeed: 50
+  deltaTime: {fileID: 11400000, guid: 5e8d8e22bbb7cd042be3c8a8b141e7ce, type: 2}
+--- !u!114 &3424053913388833082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503156322403922463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33fba5299fd804d4ea2070ea351418a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preWaitTime: 1
+  attackHeight: 40
+  attackWait: 0.5
+  fallSpeed: 80
+  postWaitTime: 2
+  deltaTime: {fileID: 11400000, guid: 5e8d8e22bbb7cd042be3c8a8b141e7ce, type: 2}
+  hitBox: {fileID: 4983464992807015064}

@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: a2cc5345439f7b047b361d73806c8bd5
+guid: 90feabd1c5e42384080432ac2f9b7bb7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7267392149587374941
-    second: WolfStandingRun_0
+      213: -725676416872244703
+    second: WolfThrow_0
   - first:
-      213: 6049427025941491120
-    second: WolfStandingRun_1
+      213: -24615982892028022
+    second: WolfThrow_1
   - first:
-      213: 5673589766496890046
-    second: WolfStandingRun_2
+      213: 4423923520705499482
+    second: WolfThrow_2
   - first:
-      213: 3420719347539411750
-    second: WolfStandingRun_3
+      213: 1546147606463790033
+    second: WolfThrow_3
   - first:
-      213: -4576258561406923277
-    second: WolfStandingRun_4
+      213: 2274017451255160196
+    second: WolfThrow_4
   - first:
-      213: 4785225191783562940
-    second: WolfStandingRun_5
+      213: -5777576978466602817
+    second: WolfThrow_5
   - first:
-      213: -4254850802311689974
-    second: WolfStandingRun_6
+      213: -4589068416061107874
+    second: WolfThrow_6
+  - first:
+      213: 8872701821500023446
+    second: WolfThrow_7
+  - first:
+      213: -2575149919786638772
+    second: WolfThrow_8
+  - first:
+      213: 6424315733509707478
+    second: WolfThrow_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -146,13 +155,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WolfStandingRun_0
+      name: WolfThrow_0
       rect:
         serializedVersion: 2
         x: 0
         y: 3000
         width: 1500
-        height: 1400
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3acc1602859052b90800000000000000
-      internalID: -7267392149587374941
+      spriteID: 12a9376c421ede5f0800000000000000
+      internalID: -725676416872244703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfStandingRun_1
+      name: WolfThrow_1
       rect:
         serializedVersion: 2
         x: 1500
         y: 3000
         width: 1500
-        height: 1400
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bde3ef24d1e3f350800000000000000
-      internalID: 6049427025941491120
+      spriteID: a8f6cebd4eb88aff0800000000000000
+      internalID: -24615982892028022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfStandingRun_2
+      name: WolfThrow_2
       rect:
         serializedVersion: 2
         x: 3000
         y: 3000
         width: 1500
-        height: 1400
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebca65925d3acbe40800000000000000
-      internalID: 5673589766496890046
+      spriteID: a51952dc00fe46d30800000000000000
+      internalID: 4423923520705499482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfStandingRun_3
+      name: WolfThrow_3
       rect:
         serializedVersion: 2
         x: 0
         y: 1500
         width: 1500
-        height: 1400
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +232,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62384627f16d87f20800000000000000
-      internalID: 3420719347539411750
+      spriteID: 1db38956e05057510800000000000000
+      internalID: 1546147606463790033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfStandingRun_4
+      name: WolfThrow_4
       rect:
         serializedVersion: 2
         x: 1500
         y: 1500
         width: 1500
-        height: 1400
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +253,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fd000f951ddd70c0800000000000000
-      internalID: -4576258561406923277
+      spriteID: 48d5a1bd2deee8f10800000000000000
+      internalID: 2274017451255160196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfStandingRun_5
+      name: WolfThrow_5
       rect:
         serializedVersion: 2
         x: 3000
         y: 1500
         width: 1500
-        height: 1400
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +274,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbe728e65f8886240800000000000000
-      internalID: 4785225191783562940
+      spriteID: fb00608595ce1dfa0800000000000000
+      internalID: -5777576978466602817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfStandingRun_6
+      name: WolfThrow_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1500
-        height: 1400
+        height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,8 +295,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a090deb0dbbb3f4c0800000000000000
-      internalID: -4254850802311689974
+      spriteID: e5196bae69a5050c0800000000000000
+      internalID: -4589068416061107874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WolfThrow_7
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 1500
+        height: 1500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692687c0c4b222b70800000000000000
+      internalID: 8872701821500023446
       vertices: []
       indices: 
       edges: []
@@ -295,7 +325,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1830c95c8597ab94eb3fbf15208f3270
+    spriteID: 1cdbac5a4c3d39a44ac6f353c6da3e70
     internalID: 0
     vertices: []
     indices: 

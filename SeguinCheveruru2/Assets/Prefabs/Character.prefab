@@ -662,7 +662,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 10d78316b986cd8448395b86dbc65694, type: 3}
   m_Color: {r: 0, g: 0.4254973, b: 1, a: 0.54509807}
   m_FlipX: 0
@@ -744,9 +744,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 10d78316b986cd8448395b86dbc65694, type: 3}
-  m_Color: {r: 1, g: 0.91025496, b: 0, a: 0.54509807}
+  m_Color: {r: 1, g: 0.91025496, b: 0, a: 0.90588236}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -872,7 +872,7 @@ MonoBehaviour:
   IsShielding: {fileID: 11400000, guid: 92dfbe25b9949ca42806637294de55a7, type: 2}
   IsAttacking: {fileID: 11400000, guid: 47d1af374beee634fb7d461016bc5ca1, type: 2}
   IsJumping: {fileID: 11400000, guid: 28d96ee756f12894e91edd3768569cd6, type: 2}
-  Body: {fileID: 729595225}
+  body: {fileID: 729595223}
 --- !u!114 &6895210100891503566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,6 +934,7 @@ MonoBehaviour:
   IsPerfectShielding: {fileID: 11400000, guid: dd4bba2cee1c6c649ab1d9513f4573f6, type: 2}
   IsAttacking: {fileID: 11400000, guid: 47d1af374beee634fb7d461016bc5ca1, type: 2}
   ShieldBreak: {fileID: 11400000, guid: 0354837432a17564e8e715e5f56357a7, type: 2}
+  ShieldRegained: {fileID: 11400000, guid: 6ebdca67a1ac67c4084769ad0bddd715, type: 2}
   ShieldDamageTaken: {fileID: 11400000, guid: e8a373771c059a84885bec10fa68177b, type: 2}
 --- !u!114 &3271161188130334566
 MonoBehaviour:

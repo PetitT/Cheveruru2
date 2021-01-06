@@ -6,7 +6,7 @@ using UnityEngine;
 public class ClawAttack : BossAttack
 {
     public float runSpeed;
-    public float minDistanceToPlayer;
+    public float minDistanceToPlayerOne;
     public float windupTime;
     public float endLagTime;
     public GameObject hitBox;
@@ -14,24 +14,23 @@ public class ClawAttack : BossAttack
 
     public override IEnumerator Attack(Action onFinish)
     {
-        if (Vector2.Distance(transform.position.Grounded(), BossDirection.Instance.target.position.Grounded()) > minDistanceToPlayer)
-        {
-            yield return GoToPlayer();
-        }
+        yield return GoToPlayer(minDistanceToPlayerOne);
         yield return DoWindup(BossAnimation.BossAnim.WindupOne, windupTime);
         yield return DoClawAttack(hitBox, endLagTime);
         onFinish?.Invoke();
     }
 
-    public IEnumerator GoToPlayer()
+    public IEnumerator GoToPlayer(float distance)
     {
-        BossAnimation.Instance.Animate(BossAnimation.BossAnim.Run);
-        while (Vector2.Distance(transform.position.Grounded(), BossDirection.Instance.target.position.Grounded()) > minDistanceToPlayer)
+        if (IsCloseToPlayer(distance)) { yield break; }
+        BossAnimation.Instance.Animate(BossAnimation.BossAnim.StandingRun);
+        while (!IsCloseToPlayer(distance))
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(BossDirection.Instance.target.position.x, transform.position.y), runSpeed * Time.deltaTime);
             yield return null;
         }
     }
+
     public virtual IEnumerator DoWindup(BossAnimation.BossAnim windupAnim, float windupTime)
     {
         BossDirection.Instance.ToggleRotation(false);
@@ -63,10 +62,13 @@ public class ClawAttack : BossAttack
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.StandingIdle);
     }
 
-
-
     public void StopWait()
     {
         isWaitingForAnim = false;
+    }
+
+    private bool IsCloseToPlayer(float distance)
+    {
+        return Vector2.Distance(transform.position.Grounded(), BossDirection.Instance.target.position.Grounded()) < distance;
     }
 }
