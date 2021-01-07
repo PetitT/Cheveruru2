@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnockBackMovement : MovementEffect
+public class KnockBackMovement : Move
 {
     public KnockBackGameEvent KnockBackEvent;
     public FloatValue KnockBackDeceleration;

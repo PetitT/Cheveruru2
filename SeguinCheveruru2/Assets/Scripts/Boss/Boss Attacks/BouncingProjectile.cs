@@ -37,7 +37,7 @@ public class BouncingProjectile : Projectile, IRevertableProjectile
         float newX = gameObject.transform.position.x + (direction * horizontalSpeed * deltaTime.Value).x;
         float newY = defaultY + (heightCurve.Evaluate(currentElapsedTime % 1) * heightmultiplicator);
 
-        gameObject.transform.position = new Vector2(newX, newY);
+        gameObject.transform.position = new Vector3(newX, newY, -1);
     }
 
     private void MoveForwards()

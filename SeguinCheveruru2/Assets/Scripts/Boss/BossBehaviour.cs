@@ -12,7 +12,7 @@ public class BossBehaviour : MonoBehaviour
     public List<BossPhase> phases;
     private int currentPhaseIndex = 0;
     private BossPhase currentPhase => phases[currentPhaseIndex];
-
+    private BossAttack lastAttack = null;
     private float remainingTimeToAttack;
 
     private void Awake()
@@ -49,7 +49,22 @@ public class BossBehaviour : MonoBehaviour
         {
             isAttacking.Value = true;
             remainingTimeToAttack = currentPhase.timeBetweenAttacks.RandomRange();
-            StartCoroutine(currentPhase.attacks.GetRandom().Attack(() => isAttacking.Value = false));
+            BossAttack newAttack = GetRandomAttack();
+            StartCoroutine(newAttack.Attack(() => isAttacking.Value = false));
+        }
+    }
+
+    private BossAttack GetRandomAttack()
+    {
+        BossAttack attack = currentPhase.attacks.GetRandom();
+        if(lastAttack != null && lastAttack == attack)
+        {
+            return GetRandomAttack();
+        }
+        else
+        {
+            lastAttack = attack;
+            return attack;
         }
     }
 }

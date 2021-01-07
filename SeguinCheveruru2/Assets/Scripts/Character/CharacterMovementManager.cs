@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class CharacterMovementManager : MonoBehaviour
 {
-    private List<MovementEffect> effects = new List<MovementEffect>();
+    private List<Move> effects = new List<Move>();
 
     private void Awake()
     {
-        effects = GetComponents<MovementEffect>().ToList();
+        effects = GetComponents<Move>().ToList();
     }
 
     private void Update()

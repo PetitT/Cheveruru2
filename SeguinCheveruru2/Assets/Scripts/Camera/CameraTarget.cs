@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CameraTarget : MonoBehaviour
+public class CameraTarget : Singleton<CameraTarget>
 {
     public Transform player;
     public Transform boss;
@@ -13,12 +13,22 @@ public class CameraTarget : MonoBehaviour
     public CinemachineVirtualCamera cam;
 
     public float camSizeChangeSpeed;
+    public float recenterSpeed;
+
+    private float currentSpeed;
 
     public Vector2 camSizeRange = new Vector2(18, 32);
     public Vector2 camLevelRange = new Vector2(10, 23);
     public Vector2 distanceRange = new Vector2(15, 45);
 
+    private bool isCentered = false;
+
     private float normalizedDistance => CalculateNormalizedDistance();
+
+    private void Start()
+    {
+        currentSpeed = camSizeChangeSpeed;
+    }
 
     private void Update()
     {
@@ -42,13 +52,27 @@ public class CameraTarget : MonoBehaviour
     }
     private void ModifyCamLevel()
     {
-        float Y = Mathf.Lerp(camLevelRange.x, camLevelRange.y, normalizedDistance);
+        float Y = camLevelRange.y;
+        if (!isCentered)
+        {
+            Y = Mathf.Lerp(camLevelRange.x, camLevelRange.y, normalizedDistance);
+        }
         cameraLevel.transform.position = new Vector2(cameraLevel.transform.position.x, Y);
     }
 
     private void ModifyCamSize()
     {
-        float size = Mathf.Lerp(camSizeRange.x, camSizeRange.y, normalizedDistance);
-        cam.m_Lens.OrthographicSize = Mathf.MoveTowards(cam.m_Lens.OrthographicSize, size, camSizeChangeSpeed * Time.deltaTime);
+        float size = camSizeRange.y;
+        if (!isCentered)
+        {
+            size = Mathf.Lerp(camSizeRange.x, camSizeRange.y, normalizedDistance);
+        }
+        cam.m_Lens.OrthographicSize = Mathf.MoveTowards(cam.m_Lens.OrthographicSize, size, currentSpeed * Time.deltaTime);
+    }
+
+    public void ToggleRecenter(bool toggle)
+    {
+        isCentered = toggle;
+        currentSpeed = toggle ? recenterSpeed : camSizeChangeSpeed;
     }
 }

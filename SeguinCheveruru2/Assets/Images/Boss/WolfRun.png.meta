@@ -171,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2880
+        y: 1920
         width: 1500
         height: 960
       alignment: 0
@@ -192,7 +192,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 2880
+        y: 1920
         width: 1500
         height: 960
       alignment: 0
@@ -213,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 2880
+        y: 1920
         width: 1500
         height: 960
       alignment: 0
@@ -234,7 +234,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1920
+        y: 960
         width: 1500
         height: 960
       alignment: 0
@@ -255,7 +255,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 1920
+        y: 960
         width: 1500
         height: 960
       alignment: 0
@@ -276,7 +276,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 1920
+        y: 960
         width: 1500
         height: 960
       alignment: 0
@@ -297,7 +297,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 960
+        y: 0
         width: 1500
         height: 960
       alignment: 0
@@ -318,7 +318,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 960
+        y: 0
         width: 1500
         height: 960
       alignment: 0
@@ -339,7 +339,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 960
+        y: 0
         width: 1500
         height: 960
       alignment: 0
@@ -351,27 +351,6 @@ TextureImporter:
       bones: []
       spriteID: 3f99af518bf720ad0800000000000000
       internalID: -2737485194868385293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfRun_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1500
-        height: 960
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9cf62163af3fdd10800000000000000
-      internalID: 2152509117848550555
       vertices: []
       indices: 
       edges: []

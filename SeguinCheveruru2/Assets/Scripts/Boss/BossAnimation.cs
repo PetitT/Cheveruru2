@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossAnimation : Singleton<BossAnimation>
 {
-    public enum BossAnim { GroundIdle, StandingIdle, Run, WindupOne, WindupTwo, WindupThree, Attack, StandingRun, Throw }
+    public enum BossAnim { GroundIdle, StandingIdle, AirIdle, Run, WindupOne, WindupTwo, WindupThree, Attack, StandingRun, Throw }
 
     [SerializeField] private Animator anim = null;
 
@@ -17,6 +17,9 @@ public class BossAnimation : Singleton<BossAnimation>
                 break;
             case BossAnim.StandingIdle:
                 anim.SetTrigger("StandingIdle");
+                break;
+            case BossAnim.AirIdle:
+                anim.SetTrigger("AirIdle");
                 break;
             case BossAnim.StandingRun:
                 anim.SetTrigger("StandingRun");

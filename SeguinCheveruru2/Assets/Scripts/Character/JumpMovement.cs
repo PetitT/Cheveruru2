@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpMovement : MovementEffect
+public class JumpMovement : Move
 {
     public FloatValue JumpForce;
     public FloatValue IncreasedJumpForcePerSec;

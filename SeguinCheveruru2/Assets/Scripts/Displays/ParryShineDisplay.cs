@@ -19,6 +19,7 @@ public class ParryShineDisplay : MonoBehaviour
 
     private void Awake()
     {
+        charSprite.material.SetFloat(ShineLocation, -1f);
         onShield.onEventRaised += ShieldDisplay;
         onPerfectShield.onEventRaised += PerfectShieldDisplay;
     }
@@ -45,12 +46,13 @@ public class ParryShineDisplay : MonoBehaviour
 
     public IEnumerator Shine()
     {
-        float currentLocation = 0.25f;
+        float currentLocation = 0.35f;
         while (currentLocation < 1)
         {
             currentLocation += shineSpeed * Time.deltaTime;
             charSprite.material.SetFloat(ShineLocation, currentLocation);
             yield return null;
         }
+        charSprite.material.SetFloat(ShineLocation, -1f);
     }
 }

@@ -10,6 +10,8 @@ public class FangThrow : BossAttack
     public Transform leftWall;
     public Transform rightWall;
 
+    public GameObject hitBox;
+
     public float moveSpeed;
     public float distanceFromWall;
     public float preWaitTime;
@@ -53,11 +55,13 @@ public class FangThrow : BossAttack
         {
             BossAnimation.Instance.Animate(BossAnimation.BossAnim.Throw);
             isWaitingForAnim = true;
+            hitBox.SetActive(true);
             while (isWaitingForAnim)
             {
                 yield return null;
             }
-            GameObject newProjectile = Pool.Instance.GetItemFromPool(projectile, throwPosition.position, Quaternion.identity);
+            hitBox.SetActive(false);
+            GameObject newProjectile = Pool.Instance.GetItemFromPool(projectile, throwPosition.position.ModifyZ(-1), Quaternion.identity);
             newProjectile.GetComponent<Projectile>().SetProjectileData(projectileSpeed.RandomRange(), BossDirection.Instance.currentDirection);
             yield return new WaitForSeconds(timeBetweenThrows.RandomRange());
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HorizontalMovement : MovementEffect
+public class HorizontalMovement : Move
 {
     public FloatValue MovementSpeed;
     public FloatValue ShieldingMoveSpeed;
