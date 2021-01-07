@@ -9,6 +9,7 @@ public class TripleClawAttack : DoubleClawAttack
     public float windupTimeThree;
     public float endLagTimeThree;
     public GameObject hitBoxThree;
+    public AudioClip clipThree;
     public float dashSpeed;
     public FloatValue deltaTime;
     private bool isDashing;
@@ -17,16 +18,16 @@ public class TripleClawAttack : DoubleClawAttack
     {
         yield return GoToPlayer(minDistanceToPlayerOne);
         yield return DoWindup(BossAnimation.BossAnim.WindupOne, windupTime);
-        yield return DoClawAttack(hitBox, endLagTime);
+        yield return DoClawAttack(hitBox, endLagTime, clipOne);
 
         yield return GoToPlayer(minDistanceToPlayerTwo);
         yield return DoWindup(BossAnimation.BossAnim.WindupTwo, windupTimeTwo);
-        yield return DoClawAttack(hitBoxTwo, endLagTimeTwo);
+        yield return DoClawAttack(hitBoxTwo, endLagTimeTwo, clipTwo);
 
         yield return GoToPlayer(minDistanceToPlayerThree);
         yield return DoWindup(BossAnimation.BossAnim.WindupThree, windupTimeThree);
         isDashing = true;
-        yield return DoClawAttack(hitBoxThree, endLagTimeThree);
+        yield return DoClawAttack(hitBoxThree, endLagTimeThree, clipThree);
         isDashing = false;
 
         onFinish?.Invoke();

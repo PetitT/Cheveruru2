@@ -10,7 +10,10 @@ public class CharacterAnimation : MonoBehaviour
     public Animator Anim;
     public BoolValue IsShielding;
     public GameEvent OnPerfectParry;
+    public GameEvent OnShieldBreak;
     public KnockBackGameEvent KnockBackRequest;
+
+    private bool isShieldBroken;
 
     private void Awake()
     {
@@ -18,6 +21,7 @@ public class CharacterAnimation : MonoBehaviour
         OnPerfectParry.onEventRaised += PerfectShieldHandler;
         IsAirborne.onValueChanged += AirborneValueChangedHandler;
         KnockBackRequest.onEventRaised += KnockBackRequestHandler;
+        OnShieldBreak.onEventRaised += ShieldBreakEvent;
     }
 
     private void OnDestroy()
@@ -26,10 +30,12 @@ public class CharacterAnimation : MonoBehaviour
         OnPerfectParry.onEventRaised -= PerfectShieldHandler;
         IsAirborne.onValueChanged -= AirborneValueChangedHandler;
         KnockBackRequest.onEventRaised -= KnockBackRequestHandler;
+        OnShieldBreak.onEventRaised -= ShieldBreakEvent;
     }
 
     private void ShieldHandler(bool obj)
     {
+        if (isShieldBroken) { return; }
         if (obj)
         {
             Anim.SetTrigger("Parry");
@@ -43,6 +49,18 @@ public class CharacterAnimation : MonoBehaviour
     private void PerfectShieldHandler()
     {
         Anim.SetTrigger("PerfectParry");
+    }
+
+    private void ShieldBreakEvent()
+    {
+        Anim.SetTrigger("ShieldBreak");
+        isShieldBroken = true;
+        Invoke("RegenerateShield", 1f);
+    }
+
+    private void RegenerateShield()
+    {
+        isShieldBroken = false;
     }
 
     private void KnockBackRequestHandler(KnockBackData obj)

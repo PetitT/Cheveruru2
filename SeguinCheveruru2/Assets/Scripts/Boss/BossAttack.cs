@@ -5,6 +5,12 @@ using UnityEngine;
 
 public abstract class BossAttack : MonoBehaviour
 {
+    protected AudioSource audioSrc;
+    protected virtual void Awake()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
+
     [ContextMenu("DoAttack")]
     public void DoAttack()
     {

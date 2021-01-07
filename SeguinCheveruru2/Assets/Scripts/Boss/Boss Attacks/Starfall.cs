@@ -15,6 +15,7 @@ public class Starfall : BossAttack
     public Transform attackPosition;
     public Transform endOfAttackPosition;
     public float movementSpeed;
+    public AudioClip jumpClip;
     private float securityDistance = 0.5f;
 
     private List<StarProjectile> stars = new List<StarProjectile>();
@@ -40,6 +41,7 @@ public class Starfall : BossAttack
         CameraTarget.Instance.ToggleRecenter(true);
         yield return new WaitForSeconds(preWaitTime);
         BossDirection.Instance.ToggleRotation(false);
+        audioSrc.PlayOneShot(jumpClip);
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.AirIdle);
         yield return GoToTarget(attackPosition.position);
         yield return ThrowStars();

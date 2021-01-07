@@ -12,12 +12,14 @@ public class StarProjectile : MonoBehaviour, IRevertableProjectile
     private Vector2 direction;
     private ParticleSystem particle;
     private SpriteRenderer sprite;
+    private AudioSource audioSrc;
     private float speed;
 
     private void Awake()
     {
         particle = GetComponentInChildren<ParticleSystem>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -47,7 +49,8 @@ public class StarProjectile : MonoBehaviour, IRevertableProjectile
     {
         particle.Play();
         yield return new WaitForSeconds(timeToStart);
-        this.direction = ((Vector2)CharacterPosition.Instance.transform.position - (Vector2)transform.position).normalized;
+        audioSrc.Play();
+        direction = ((Vector2)CharacterPosition.Instance.transform.position - (Vector2)transform.position).normalized;
         isActivated = true;
     }
 

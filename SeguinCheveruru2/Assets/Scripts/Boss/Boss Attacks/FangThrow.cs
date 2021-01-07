@@ -22,6 +22,9 @@ public class FangThrow : BossAttack
     public Vector2 projectileSpeed;
     private Vector2 throwDirection;
 
+    public List<AudioClip> throwClips;
+    private AudioClip lastClip;
+
     private bool isWaitingForAnim = false;
 
     public override IEnumerator Attack(Action onFinish)
@@ -54,6 +57,7 @@ public class FangThrow : BossAttack
         for (int i = 0; i < numberOfThrows.RandomRange(); i++)
         {
             BossAnimation.Instance.Animate(BossAnimation.BossAnim.Throw);
+            audioSrc.PlayOneShot(GetRandomClip());
             isWaitingForAnim = true;
             hitBox.SetActive(true);
             while (isWaitingForAnim)
@@ -77,5 +81,19 @@ public class FangThrow : BossAttack
     public void StopWait()
     {
         isWaitingForAnim = false;
+    }
+
+    private AudioClip GetRandomClip()
+    {
+        AudioClip newClip = throwClips.GetRandom();
+        if(lastClip == null || newClip != lastClip)
+        {
+            lastClip = newClip;
+            return newClip;
+        }
+        else
+        {
+            return GetRandomClip();
+        }
     }
 }

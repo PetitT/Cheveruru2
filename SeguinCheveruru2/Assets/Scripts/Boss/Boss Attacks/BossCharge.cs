@@ -7,6 +7,9 @@ public class BossCharge : BossAttack
 {
     public GameObject hitBox;
 
+    public AudioClip preCharge;
+    public AudioClip charge;
+
     public Transform leftTarget;
     public Transform rightTarget;
 
@@ -23,10 +26,12 @@ public class BossCharge : BossAttack
         Vector2 target = direction == Vector2.right ? rightTarget.position : leftTarget.position;
         target = new Vector2(target.x, transform.position.y);
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.GroundIdle);
+        audioSrc.PlayOneShot(preCharge);
         yield return new WaitForSeconds(preWaitTime);
         hitBox.SetActive(true);
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.Run);
         BossDirection.Instance.ToggleRotation(false);
+        audioSrc.PlayOneShot(charge);
         float distance = Mathf.Abs(transform.position.x - target.x);
         while (distance > securityDistance)
         {

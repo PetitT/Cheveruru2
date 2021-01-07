@@ -10,13 +10,14 @@ public class ClawAttack : BossAttack
     public float windupTime;
     public float endLagTime;
     public GameObject hitBox;
+    public AudioClip clipOne;
     private bool isWaitingForAnim;
 
     public override IEnumerator Attack(Action onFinish)
     {
         yield return GoToPlayer(minDistanceToPlayerOne);
         yield return DoWindup(BossAnimation.BossAnim.WindupOne, windupTime);
-        yield return DoClawAttack(hitBox, endLagTime);
+        yield return DoClawAttack(hitBox, endLagTime, clipOne);
         onFinish?.Invoke();
     }
 
@@ -45,9 +46,10 @@ public class ClawAttack : BossAttack
         BossAnimation.Instance.ToggleAnimation(true);
     }
 
-    public virtual IEnumerator DoClawAttack(GameObject hitBoxObject, float endLag)
+    public virtual IEnumerator DoClawAttack(GameObject hitBoxObject, float endLag, AudioClip soundEffect)
     {
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.Attack);
+        audioSrc.PlayOneShot(soundEffect);
         isWaitingForAnim = true;
         hitBoxObject.SetActive(true);
         while (isWaitingForAnim)

@@ -16,10 +16,15 @@ public class Shunpo : BossAttack
     public GameObject hitBox;
     public GameObject smokeBomb;
 
+    public AudioClip smokeBombClip;
+    public AudioClip reappearClip;
+    public AudioClip fallClip;
+
     private SpriteRenderer sprite;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         sprite = GetComponent<SpriteRenderer>();
     }
 
@@ -27,6 +32,7 @@ public class Shunpo : BossAttack
     {
         float defaultY = transform.position.y;
         yield return new WaitForSeconds(preWaitTime);
+        audioSrc.PlayOneShot(smokeBombClip);
         GameObject smoke = Pool.Instance.GetItemFromPool(smokeBomb, transform.position, Quaternion.identity);
         sprite.enabled = false;
         transform.position = new Vector2(22, 100);
@@ -35,11 +41,13 @@ public class Shunpo : BossAttack
         Vector2 attackPosition = playerPosition.ModifyY(playerPosition.y + attackHeight);
         transform.position = attackPosition;
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.AirIdle);
+        audioSrc.PlayOneShot(reappearClip);
         sprite.enabled = true;
         GameObject newSmoke = Pool.Instance.GetItemFromPool(smokeBomb, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(attackWait);
+        audioSrc.PlayOneShot(fallClip);
         hitBox.SetActive(true);
-        while(transform.position.y > defaultY)
+        while (transform.position.y > defaultY)
         {
             transform.Translate(Vector2.down * fallSpeed * deltaTime.Value);
             yield return null;

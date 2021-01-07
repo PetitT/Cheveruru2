@@ -17,7 +17,6 @@ public class AttackStateBehaviour : StateMachineBehaviour
     {
         isAttacking.Value = false;
         attackRequest.Value = true;
-
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
