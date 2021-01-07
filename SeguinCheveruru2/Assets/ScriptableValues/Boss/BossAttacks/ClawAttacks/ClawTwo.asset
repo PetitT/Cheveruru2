@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ClawTwo
   m_EditorClassIdentifier: 
   HealthDamage: 2
-  ShieldDamage: 2
+  ShieldDamage: 6.5
   UnshieldedKnockBack: 2
   ShieldedKnockBack: 2

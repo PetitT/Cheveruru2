@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 240455690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBoxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 321719829}
   - component: {fileID: 321719831}
   - component: {fileID: 321719830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClawOneHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 619445602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ThrowPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 736920392}
   - component: {fileID: 736920391}
   - component: {fileID: 736920390}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChargeHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 1813212980}
   - component: {fileID: 1813212982}
   - component: {fileID: 1813212981}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FangThrowHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 6717641990367782913}
   - component: {fileID: 9026425200782493461}
   - component: {fileID: 8588953735134050221}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClawThreeHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 6551650577308891670}
   - component: {fileID: 8535895849738536390}
   - component: {fileID: 6965285309596472860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClawTwoHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 5107246531017759780}
   - component: {fileID: 2205554679476681362}
   - component: {fileID: 6946801030352160623}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShunpoHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 6251056759150201539}
   - component: {fileID: 8279150376114392334}
   - component: {fileID: 898508166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,22 +621,30 @@ MonoBehaviour:
   bossHealth: {fileID: 11400000, guid: ffcc740dff531b04887659b3c7460274, type: 2}
   isAttacking: {fileID: 11400000, guid: ee970cbf6c4d97d4297e1f2e2b702244, type: 2}
   phases:
-  - threshold: 0.75
+  - threshold: 0.66
     attacks:
     - {fileID: 2131286883}
+    - {fileID: 573377408361839434}
+    - {fileID: 3315526196045693894}
     timeBetweenAttacks: {x: 2, y: 3}
+  - threshold: 0.33
+    attacks:
+    - {fileID: 321598677478292993}
+    - {fileID: 3594117594486691928}
+    - {fileID: 573377408361839434}
+    - {fileID: 2131286883}
+    - {fileID: 3315526196045693894}
+    timeBetweenAttacks: {x: 1.5, y: 2}
   - threshold: 0
     attacks:
     - {fileID: 6302898300672322372}
     - {fileID: 321598677478292993}
+    - {fileID: 573377408361839434}
     - {fileID: 3594117594486691928}
-    timeBetweenAttacks: {x: 2, y: 3}
-  - threshold: 0
-    attacks:
-    - {fileID: 6302898300672322372}
-    - {fileID: 321598677478292993}
-    - {fileID: 3594117594486691928}
-    timeBetweenAttacks: {x: 2, y: 3}
+    - {fileID: 3315526196045693894}
+    - {fileID: 3424053913388833082}
+    - {fileID: 777329577}
+    timeBetweenAttacks: {x: 1, y: 1.5}
 --- !u!114 &3315526196045693893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,9 +737,9 @@ MonoBehaviour:
   distanceFromWall: 0.5
   preWaitTime: 0.25
   postWaitTime: 1
-  timeBetweenThrows: {x: 0.5, y: 1.5}
+  timeBetweenThrows: {x: 0.2, y: 0.5}
   numberOfThrows: {x: 5, y: 7}
-  projectileSpeed: {x: 40, y: 50}
+  projectileSpeed: {x: 60, y: 80}
   throwClips:
   - {fileID: 8300000, guid: 77637ace16aa54e4d962ce3239ba88f4, type: 3}
   - {fileID: 8300000, guid: d3941e773c55c544f88bf3b2b935e7f3, type: 3}
@@ -757,11 +765,11 @@ MonoBehaviour:
   hitBox: {fileID: 1813212979}
   moveSpeed: 50
   distanceFromWall: 1
-  preWaitTime: 1
+  preWaitTime: 0.25
   postWaitTime: 1
-  timeBetweenThrows: {x: 1, y: 1.5}
-  numberOfThrows: {x: 5, y: 5}
-  projectileSpeed: {x: 15, y: 20}
+  timeBetweenThrows: {x: 0.3, y: 0.75}
+  numberOfThrows: {x: 7, y: 10}
+  projectileSpeed: {x: 5, y: 40}
   throwClips:
   - {fileID: 8300000, guid: 77637ace16aa54e4d962ce3239ba88f4, type: 3}
   - {fileID: 8300000, guid: d3941e773c55c544f88bf3b2b935e7f3, type: 3}
@@ -801,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458c18b7a80738a4ea1090e4eba86fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 30
+  runSpeed: 50
   minDistanceToPlayerOne: 12
   windupTime: 0.25
   endLagTime: 0.25
@@ -819,15 +827,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50906fec48970cd42a888c0f9a8442fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 30
+  runSpeed: 50
   minDistanceToPlayerOne: 12
-  windupTime: 0.25
-  endLagTime: 0.25
+  windupTime: 0.15
+  endLagTime: 0.15
   hitBox: {fileID: 321719828}
   clipOne: {fileID: 8300000, guid: 4dd06484d0420b246a9922ed50badb4c, type: 3}
   minDistanceToPlayerTwo: 15
-  windupTimeTwo: 0.25
-  endLagTimeTwo: 0.25
+  windupTimeTwo: 0.15
+  endLagTimeTwo: 0.15
   hitBoxTwo: {fileID: 2134836154359938730}
   clipTwo: {fileID: 8300000, guid: b2f016fc4cb5d074caf0ff81bf72b3e1, type: 3}
 --- !u!114 &6302898300672322372
@@ -842,20 +850,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da5f37b505af4d4d9bb87547315c0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 30
+  runSpeed: 50
   minDistanceToPlayerOne: 12
-  windupTime: 0.25
-  endLagTime: 0.25
+  windupTime: 0.1
+  endLagTime: 0.1
   hitBox: {fileID: 321719828}
   clipOne: {fileID: 8300000, guid: 4dd06484d0420b246a9922ed50badb4c, type: 3}
   minDistanceToPlayerTwo: 15
-  windupTimeTwo: 0.25
-  endLagTimeTwo: 0.25
+  windupTimeTwo: 0.1
+  endLagTimeTwo: 0.1
   hitBoxTwo: {fileID: 2134836154359938730}
   clipTwo: {fileID: 8300000, guid: b2f016fc4cb5d074caf0ff81bf72b3e1, type: 3}
   minDistanceToPlayerThree: 20
-  windupTimeThree: 0.3
-  endLagTimeThree: 0.3
+  windupTimeThree: 0.2
+  endLagTimeThree: 0.2
   hitBoxThree: {fileID: 563442946686140118}
   clipThree: {fileID: 8300000, guid: 7393b77f0facc474b89ed85679450f59, type: 3}
   dashSpeed: 50
@@ -873,11 +881,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preWaitTime: 0.25
-  invisibleTime: 1
+  invisibleTime: 0.5
   attackHeight: 40
   attackWait: 0.5
-  fallSpeed: 80
-  postWaitTime: 2
+  fallSpeed: 100
+  postWaitTime: 1
   deltaTime: {fileID: 11400000, guid: 5e8d8e22bbb7cd042be3c8a8b141e7ce, type: 2}
   hitBox: {fileID: 4983464992807015064}
   smokeBomb: {fileID: 3569613922291466367, guid: b48e6ffada836bf4c9d62a1e1835ae9c, type: 3}

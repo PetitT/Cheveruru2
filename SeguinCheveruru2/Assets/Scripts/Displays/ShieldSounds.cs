@@ -13,10 +13,15 @@ public class ShieldSounds : MonoBehaviour
     public AudioClip shieldRegainedSoundOne;
     public AudioClip shieldRegainedSoundTwo;
 
+    public AudioClip shieldStartSound;
+
     public GameEvent parryEvent;
     public GameEvent perfectParryEvent;
     public GameEvent shieldBreakEvent;
     public GameEvent shieldRegainedEvent;
+    public BoolValue isShielding;
+
+    private bool shieldBroken;
 
     private void Awake()
     {
@@ -24,8 +29,16 @@ public class ShieldSounds : MonoBehaviour
         perfectParryEvent.onEventRaised += PerfectParrySound;
         shieldBreakEvent.onEventRaised += ShieldBreakSound;
         shieldRegainedEvent.onEventRaised += ShieldRegainedSound;
+        isShielding.onValueChanged += ShieldStartSound;
     }
 
+    private void ShieldStartSound(bool obj)
+    {
+        if (obj)
+        {
+            audioSrc.PlayOneShot(shieldStartSound);
+        }
+    }
 
     private void OnDestroy()
     {
@@ -47,13 +60,18 @@ public class ShieldSounds : MonoBehaviour
 
     private void ShieldBreakSound()
     {
+        shieldBroken = true;
         audioSrc.PlayOneShot(shieldBreakSoundOne);
         audioSrc.PlayOneShot(shieldBreakSoundTwo);
     }
 
     private void ShieldRegainedSound()
     {
-        audioSrc.PlayOneShot(shieldRegainedSoundOne);
-        audioSrc.PlayOneShot(shieldRegainedSoundTwo);
+        if (shieldBroken)
+        {
+            shieldBroken = false;
+            audioSrc.PlayOneShot(shieldRegainedSoundOne);
+            audioSrc.PlayOneShot(shieldRegainedSoundTwo);
+        }
     }
 }

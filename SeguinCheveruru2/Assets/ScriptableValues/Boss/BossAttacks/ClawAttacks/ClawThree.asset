@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f297cfec97758b1418f23fcf0bbface7, type: 3}
   m_Name: ClawThree
   m_EditorClassIdentifier: 
-  HealthDamage: 3
-  ShieldDamage: 3
-  UnshieldedKnockBack: 3
-  ShieldedKnockBack: 3
+  HealthDamage: 3.5
+  ShieldDamage: 7.5
+  UnshieldedKnockBack: 5
+  ShieldedKnockBack: 8

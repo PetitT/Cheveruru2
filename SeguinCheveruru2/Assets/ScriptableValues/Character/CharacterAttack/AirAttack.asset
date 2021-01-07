@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f297cfec97758b1418f23fcf0bbface7, type: 3}
   m_Name: AirAttack
   m_EditorClassIdentifier: 
-  HealthDamage: 1
+  HealthDamage: 1.25
   ShieldDamage: 0
   UnshieldedKnockBack: 0
   ShieldedKnockBack: 0

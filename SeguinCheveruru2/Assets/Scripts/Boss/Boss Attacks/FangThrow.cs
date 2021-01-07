@@ -48,12 +48,20 @@ public class FangThrow : BossAttack
             yield return null;
         }
         BossDirection.Instance.ToggleRotation(true);
-        BossAnimation.Instance.Animate(BossAnimation.BossAnim.StandingIdle);
     }
 
     private IEnumerator ThrowFangs()
     {
+        BossAnimation.Instance.Animate(BossAnimation.BossAnim.WindupOne);
+        isWaitingForAnim = true;
+        while (isWaitingForAnim)
+        {
+            yield return null;
+        }
+        BossAnimation.Instance.ToggleAnimation(false);
         yield return new WaitForSeconds(preWaitTime);
+        BossAnimation.Instance.ToggleAnimation(true);
+
         for (int i = 0; i < numberOfThrows.RandomRange(); i++)
         {
             BossAnimation.Instance.Animate(BossAnimation.BossAnim.Throw);

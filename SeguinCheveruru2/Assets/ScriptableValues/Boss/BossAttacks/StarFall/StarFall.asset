@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f297cfec97758b1418f23fcf0bbface7, type: 3}
   m_Name: StarFall
   m_EditorClassIdentifier: 
-  HealthDamage: 1
-  ShieldDamage: 1
-  UnshieldedKnockBack: 1
-  ShieldedKnockBack: 1
+  HealthDamage: 2
+  ShieldDamage: 2
+  UnshieldedKnockBack: 2
+  ShieldedKnockBack: 2

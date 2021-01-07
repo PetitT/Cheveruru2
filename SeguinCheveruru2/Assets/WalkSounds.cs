@@ -24,7 +24,6 @@ public class WalkSounds : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         remainingTimeBetweenSteps -= Time.deltaTime;
-        Debug.Log(remainingTimeBetweenSteps);
         if (remainingTimeBetweenSteps <= 0)
         {
             audioSrc.PlayOneShot(steps.GetRandom());

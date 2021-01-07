@@ -16,12 +16,15 @@ public class BossCollision : MonoBehaviour
         {
             if (damageDealer.currentOrigin == DamageOrigin.ennemy) { return; }
             HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage);
-            FreezeFrameRequest.Raise(FreezeFrameIntensity.Value);
             FlashRequest.Raise();
             DisplayBlood(collision, damageDealer);
             if (collision.TryGetComponent(out IRevertableProjectile revertableProjectile))
             {
                 collision.gameObject.SetActive(false);
+            }
+            else
+            {
+                FreezeFrameRequest.Raise(FreezeFrameIntensity.Value);
             }
         }
     }

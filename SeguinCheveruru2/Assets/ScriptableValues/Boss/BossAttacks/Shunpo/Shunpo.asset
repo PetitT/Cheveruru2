@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Shunpo
   m_EditorClassIdentifier: 
   HealthDamage: 2
-  ShieldDamage: 2
-  UnshieldedKnockBack: 2
-  ShieldedKnockBack: 2
+  ShieldDamage: 4
+  UnshieldedKnockBack: 4
+  ShieldedKnockBack: 5

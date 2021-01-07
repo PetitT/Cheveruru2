@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f297cfec97758b1418f23fcf0bbface7, type: 3}
   m_Name: DamageData
   m_EditorClassIdentifier: 
-  HealthDamage: 1
-  ShieldDamage: 1
-  UnshieldedKnockBack: 5
-  ShieldedKnockBack: 3
+  HealthDamage: 3
+  ShieldDamage: 10
+  UnshieldedKnockBack: 10
+  ShieldedKnockBack: 8

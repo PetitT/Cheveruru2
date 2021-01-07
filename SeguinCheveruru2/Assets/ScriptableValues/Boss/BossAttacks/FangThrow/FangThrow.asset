@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FangThrow
   m_EditorClassIdentifier: 
   HealthDamage: 1
-  ShieldDamage: 1
-  UnshieldedKnockBack: 5
-  ShieldedKnockBack: 3
+  ShieldDamage: 2
+  UnshieldedKnockBack: 7
+  ShieldedKnockBack: 7

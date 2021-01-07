@@ -34,7 +34,7 @@ public class BossBehaviour : MonoBehaviour
 
     private void BossHealthValueChangedHandler(float obj)
     {
-        if(currentPhaseIndex >= phases.Count) { return; }
+        if(currentPhaseIndex >= phases.Count) { Debug.Log("END"); return;  }
         if (bossHealth.Value / bossHealth.InitialValue < currentPhase.threshold)
         {
             currentPhaseIndex++;

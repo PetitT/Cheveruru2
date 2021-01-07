@@ -11,7 +11,9 @@ public class HealthBarDisplay : MonoBehaviour
     public Slider smoothedBar;
 
     public float smoothing;
+    public float timeToDisplay;
 
+    private float remainingTimeToDisplay;
     private float smoothedTarget = 1;
 
     private void Awake()
@@ -21,7 +23,9 @@ public class HealthBarDisplay : MonoBehaviour
 
     private void Update()
     {
-        if(smoothedBar.value > smoothedTarget)
+        remainingTimeToDisplay -= Time.deltaTime;
+
+        if (smoothedBar.value > smoothedTarget && remainingTimeToDisplay < 0)
         {
             smoothedBar.value -= smoothing * Time.deltaTime;
         }
@@ -31,6 +35,8 @@ public class HealthBarDisplay : MonoBehaviour
     {
         float normalizedHealth = currentHealth / health.InitialValue;
         normalizedHealth = Mathf.Clamp(normalizedHealth, 0, 1);
+
+        remainingTimeToDisplay = timeToDisplay;
 
         instantBar.value = normalizedHealth;
         smoothedTarget = normalizedHealth;
