@@ -16,6 +16,7 @@ public class Starfall : BossAttack
     public Transform endOfAttackPosition;
     public float movementSpeed;
     public AudioClip jumpClip;
+    public GameObject starBounds;
     private float securityDistance = 0.5f;
 
     private List<StarProjectile> stars = new List<StarProjectile>();
@@ -31,8 +32,15 @@ public class Starfall : BossAttack
 
     private Vector3 GetStarPosition()
     {
-        float X = new Vector2(bottomLeft.position.x, topRight.position.x).RandomRange();
-        float Y = new Vector2(bottomLeft.position.y, topRight.position.y).RandomRange();
+        Collider2D col = starBounds.GetComponents<BoxCollider2D>().GetRandom();
+        float XSize = col.bounds.size.x / 2;
+        float YSize = col.bounds.size.y / 2;
+        float X = new Vector2(col.bounds.center.x - XSize, col.bounds.center.x + XSize).RandomRange();
+        float Y = new Vector2(col.bounds.center.y - YSize, col.bounds.center.y + YSize).RandomRange();
+        
+
+        //float X = new Vector2(bottomLeft.position.x, topRight.position.x).RandomRange();
+        //float Y = new Vector2(bottomLeft.position.y, topRight.position.y).RandomRange();
         return new Vector3(X, Y, -1);
     }
 

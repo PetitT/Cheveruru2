@@ -18,12 +18,14 @@ public class TooBusyToPlaceCloudsKek : MonoBehaviour
     [ContextMenu("PlaceClouds")]
     public void PlaceClouds()
     {
+        currentClouds.Clear();
         for (int i = 0; i < numberOfClouds; i++)
         {
             GameObject newCloud = Instantiate(cloud);
             newCloud.transform.position = GetCloudPosition();
             newCloud.GetComponent<SpriteRenderer>().flipX = Helper.GetRandomBool();
             newCloud.GetComponent<SpriteRenderer>().sprite = sprites.GetRandom();
+            newCloud.GetComponent<SpriteRenderer>().sortingOrder = 0 - i;
 
             currentClouds.Add(newCloud);
         }
