@@ -18,7 +18,7 @@ public class BrokenShieldDisplay : MonoBehaviour
     private bool canDisplayShield = false;
     private bool wasShieldBroken = false;
 
-    private void Start()
+    private void Awake()
     {
         shieldBreakEvent.onEventRaised += DisplayShieldBreak;
         shieldRegainedEvent.onEventRaised += DisplayShieldRegained;
@@ -27,7 +27,7 @@ public class BrokenShieldDisplay : MonoBehaviour
     private void OnDestroy()
     {
         shieldBreakEvent.onEventRaised -= DisplayShieldBreak;
-        shieldRegainedEvent.onEventRaised += DisplayShieldRegained;
+        shieldRegainedEvent.onEventRaised -= DisplayShieldRegained;
     }
 
     private void Update()

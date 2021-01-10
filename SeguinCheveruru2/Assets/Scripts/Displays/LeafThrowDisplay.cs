@@ -15,6 +15,11 @@ public class LeafThrowDisplay : MonoBehaviour
         isJumping.onValueChanged += ThrowLeaves;
     }
 
+    private void OnDestroy()
+    {
+        isJumping.onValueChanged -= ThrowLeaves;
+    }
+
     private void ThrowLeaves(bool obj)
     {
         if (obj != lastValue)

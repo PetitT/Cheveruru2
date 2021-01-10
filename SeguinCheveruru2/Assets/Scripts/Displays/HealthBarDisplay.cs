@@ -21,6 +21,11 @@ public class HealthBarDisplay : MonoBehaviour
         health.onValueChanged += DisplayHealth;
     }
 
+    private void OnDestroy()
+    {
+        health.onValueChanged -= DisplayHealth;
+    }
+
     private void Update()
     {
         remainingTimeToDisplay -= Time.deltaTime;

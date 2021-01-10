@@ -32,20 +32,22 @@ public class ShieldSounds : MonoBehaviour
         isShielding.onValueChanged += ShieldStartSound;
     }
 
-    private void ShieldStartSound(bool obj)
-    {
-        if (obj)
-        {
-            audioSrc.PlayOneShot(shieldStartSound);
-        }
-    }
 
     private void OnDestroy()
     {
         parryEvent.onEventRaised -= ParrySound;
         perfectParryEvent.onEventRaised -= PerfectParrySound;
         shieldBreakEvent.onEventRaised -= ShieldBreakSound;
-        shieldRegainedEvent.onEventRaised += ShieldRegainedSound;
+        shieldRegainedEvent.onEventRaised -= ShieldRegainedSound;
+        isShielding.onValueChanged -= ShieldStartSound;
+    }
+
+    private void ShieldStartSound(bool obj)
+    {
+        if (obj)
+        {
+            audioSrc.PlayOneShot(shieldStartSound);
+        }
     }
 
     private void PerfectParrySound()

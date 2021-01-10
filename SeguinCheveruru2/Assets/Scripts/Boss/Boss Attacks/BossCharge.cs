@@ -22,15 +22,15 @@ public class BossCharge : BossAttack
 
     public override IEnumerator Attack(Action onFinish)
     {
-        Vector2 direction = BossDirection.Instance.currentDirection;
-        Vector2 target = direction == Vector2.right ? rightTarget.position : leftTarget.position;
-        target = new Vector2(target.x, transform.position.y);
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.GroundIdle);
         audioSrc.PlayOneShot(preCharge);
         yield return new WaitForSeconds(preWaitTime);
         hitBox.SetActive(true);
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.Run);
         BossDirection.Instance.ToggleRotation(false);
+        Vector2 direction = BossDirection.Instance.currentDirection;
+        Vector2 target = direction == Vector2.right ? rightTarget.position : leftTarget.position;
+        target = new Vector2(target.x, transform.position.y);
         audioSrc.PlayOneShot(charge);
         float distance = Mathf.Abs(transform.position.x - target.x);
         while (distance > securityDistance)

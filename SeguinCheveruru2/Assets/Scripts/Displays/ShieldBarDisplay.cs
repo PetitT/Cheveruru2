@@ -31,6 +31,7 @@ public class ShieldBarDisplay : MonoBehaviour
         onShieldRegained.onEventRaised -= ShieldRegainedHandler;
         shieldAmount.onValueChanged -= ShieldAmountDisplay;
     }
+
     private void ShieldAmountDisplay(float amount)
     {
         float normalizedShield = amount / shieldAmount.InitialValue;

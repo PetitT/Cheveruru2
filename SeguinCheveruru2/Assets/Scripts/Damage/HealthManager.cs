@@ -17,7 +17,7 @@ public class HealthManager : MonoBehaviour
     private void OnDestroy()
     {
         OnDamageTaken.onEventRaised -= DamageTakenhandler; 
-        OnHealthGained.onEventRaised += HealthGainedHandler;
+        OnHealthGained.onEventRaised -= HealthGainedHandler;
     }
 
     private void HealthGainedHandler(float obj)

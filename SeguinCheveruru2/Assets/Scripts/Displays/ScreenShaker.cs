@@ -27,6 +27,19 @@ public class ScreenShaker : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        for (int i = 0; i < screenShakeEvents.Count; i++)
+        {
+            screenShakeEvents[i].onEventRaised -= ScreenShake;
+        }
+
+        for (int i = 0; i < floatShakeEvents.Count; i++)
+        {
+            floatShakeEvents[i].onEventRaised -= ScreenShake;
+        }
+    }
+
     private void ScreenShake(float obj)
     {
         DoShake();

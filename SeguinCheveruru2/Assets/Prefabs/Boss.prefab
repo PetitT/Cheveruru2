@@ -612,7 +612,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6503156322403922463}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0b0427fa85e4e94eaf8009d6903f2aa, type: 3}
   m_Name: 
@@ -626,7 +626,7 @@ MonoBehaviour:
     - {fileID: 2131286883}
     - {fileID: 573377408361839434}
     - {fileID: 3315526196045693894}
-    timeBetweenAttacks: {x: 2, y: 3}
+    timeBetweenAttacks: {x: 1, y: 1.5}
   - threshold: 0.33
     attacks:
     - {fileID: 321598677478292993}
@@ -634,17 +634,16 @@ MonoBehaviour:
     - {fileID: 573377408361839434}
     - {fileID: 2131286883}
     - {fileID: 3315526196045693894}
-    timeBetweenAttacks: {x: 1.5, y: 2}
+    timeBetweenAttacks: {x: 0.5, y: 1}
   - threshold: 0
     attacks:
     - {fileID: 6302898300672322372}
     - {fileID: 321598677478292993}
-    - {fileID: 573377408361839434}
     - {fileID: 3594117594486691928}
     - {fileID: 3315526196045693894}
     - {fileID: 3424053913388833082}
     - {fileID: 777329577}
-    timeBetweenAttacks: {x: 1, y: 1.5}
+    timeBetweenAttacks: {x: 0, y: 0.5}
 --- !u!114 &3315526196045693893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,18 +903,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23acf75e3d1221841a2c6e2835dace01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfStars: 5
+  numberOfStars: 8
   star: {fileID: 4879991949292057769, guid: ff9a3e98801bba24e994ead4876bcab8, type: 3}
   preWaitTime: 0
-  postWaitTime: 3
-  timeBetweenStarThrows: {x: 0.5, y: 1.5}
-  starsSpeed: {x: 50, y: 80}
+  postWaitTime: 2
+  timeBetweenStarThrows: {x: 0.5, y: 1}
+  starsSpeed: {x: 60, y: 90}
   topRight: {fileID: 0}
   bottomLeft: {fileID: 0}
   attackPosition: {fileID: 0}
   endOfAttackPosition: {fileID: 0}
   movementSpeed: 50
   jumpClip: {fileID: 8300000, guid: 1ebf17d9f58875d48937e601d5ca2f47, type: 3}
+  starBounds: {fileID: 0}
 --- !u!114 &777329562
 MonoBehaviour:
   m_ObjectHideFlags: 0

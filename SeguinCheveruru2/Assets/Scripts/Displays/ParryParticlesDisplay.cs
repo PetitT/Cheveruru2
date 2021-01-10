@@ -16,6 +16,12 @@ public class ParryParticlesDisplay : MonoBehaviour
         onNormalParry.onEventRaised += DisplayNormalParticles;
     }
 
+    private void OnDestroy()
+    {
+        onPerfectParry.onEventRaised -= DisplayPerfectParticles;
+        onNormalParry.onEventRaised -= DisplayNormalParticles;
+    }
+
     private void DisplayNormalParticles()
     {
         normalParryParticles.Play();

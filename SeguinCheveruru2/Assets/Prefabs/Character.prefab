@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823878}
   - component: {fileID: 1823879}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BrokenShield_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 284627911}
   - component: {fileID: 284627912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BrokenShield_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396473507}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 581681753}
   - component: {fileID: 581681754}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BrokenShield_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 599572719}
   - component: {fileID: 599572718}
   - component: {fileID: 599572720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AirAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1718471854}
   - component: {fileID: 1746164422638359795}
   - component: {fileID: 647115126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750741141}
   - component: {fileID: 750741142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BrokenShield_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,7 +877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065879007}
   - component: {fileID: 1065879008}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BrokenShield_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,7 +961,7 @@ GameObject:
   - component: {fileID: 1296092546}
   - component: {fileID: 1296092545}
   - component: {fileID: 1296092547}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CounterAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 1316735355}
   - component: {fileID: 1316735357}
   - component: {fileID: 1316735356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: YellowShieldParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5914,7 +5914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326853187}
   - component: {fileID: 1326853188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BrokenShield_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5995,7 +5995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1464538699}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitBoxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6033,7 +6033,7 @@ GameObject:
   - component: {fileID: 1660595128}
   - component: {fileID: 1660595127}
   - component: {fileID: 1660595129}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Attack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6118,7 +6118,7 @@ GameObject:
   - component: {fileID: 1696896303}
   - component: {fileID: 1696896302}
   - component: {fileID: 1696896304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Attack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6203,7 +6203,7 @@ GameObject:
   - component: {fileID: 1907346227}
   - component: {fileID: 1907346226}
   - component: {fileID: 1907346228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Attack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6286,7 +6286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070833320}
   - component: {fileID: 2070833319}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BrokenShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6343,7 +6343,7 @@ GameObject:
   - component: {fileID: 3271161186358954191}
   - component: {fileID: 3271161186358954176}
   - component: {fileID: 1035771189}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6438,7 +6438,7 @@ GameObject:
   - component: {fileID: 3271161187687694705}
   - component: {fileID: 3271161187687694704}
   - component: {fileID: 910963669}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PerfectShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6546,7 +6546,7 @@ GameObject:
   - component: {fileID: 6487846656457734672}
   - component: {fileID: 1452910605}
   - component: {fileID: 1452910596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6850,7 +6850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2152271488098653776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeavesOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6882,7 +6882,7 @@ GameObject:
   - component: {fileID: 6502368474832385050}
   - component: {fileID: 3550393589863312616}
   - component: {fileID: 8269243557913235090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RedShieldParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11750,7 +11750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4561139616895541721}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shields
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11785,7 +11785,7 @@ GameObject:
   - component: {fileID: 5728175219456909136}
   - component: {fileID: 6435283474052076914}
   - component: {fileID: 6925869382927230158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BlueShieldParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

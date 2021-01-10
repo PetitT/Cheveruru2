@@ -13,6 +13,11 @@ public class PerfectShieldDisplay : MonoBehaviour
         IsPerfectShielding.onValueChanged += ValueChangedHandler;
     }
 
+    private void OnDestroy()
+    {
+        IsPerfectShielding.onValueChanged -= ValueChangedHandler;
+    }
+
     private void ValueChangedHandler(bool toggle)
     {
         PerfectShieldObject.SetActive(toggle);

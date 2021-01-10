@@ -14,6 +14,11 @@ public class ShieldDisplay : MonoBehaviour
         ShieldValue.onValueChanged += ShieldDisplayHandler;
         IsShieldingValue.onValueChanged += IsShieldingHandler;
     }
+    private void OnDestroy()
+    {
+        ShieldValue.onValueChanged -= ShieldDisplayHandler;
+        IsShieldingValue.onValueChanged -= IsShieldingHandler;
+    }
 
     private void IsShieldingHandler(bool obj)
     {
