@@ -9,6 +9,7 @@ public class FangThrow : BossAttack
     public Transform throwPosition;
     public Transform leftWall;
     public Transform rightWall;
+    public Transform middle;
 
     public GameObject hitBox;
 
@@ -36,7 +37,8 @@ public class FangThrow : BossAttack
 
     private IEnumerator GoToWall()
     {
-        Vector2 targetPos = BossDirection.Instance.target.position.x > transform.position.x ? leftWall.position : rightWall.position;
+        Vector2 targetPos = FindTargetPos();
+       // Vector2 targetPos = BossDirection.Instance.target.position.x > transform.position.x ? leftWall.position : rightWall.position;
         if (IsAtWall(targetPos)) { yield break; }
         transform.rotation = targetPos == (Vector2)rightWall.position ? Quaternion.Euler(0, 180, 0) : Quaternion.Euler(0, 0, 0);
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.StandingRun);
@@ -102,6 +104,20 @@ public class FangThrow : BossAttack
         else
         {
             return GetRandomClip();
+        }
+    }
+
+    private Vector2 FindTargetPos()
+    {
+        
+        float X = BossDirection.Instance.target.position.x;
+        if(X > middle.position.x)
+        {
+            return leftWall.position;
+        }
+        else
+        {
+            return rightWall.position;
         }
     }
 }

@@ -38,11 +38,13 @@ public class CharacterAnimation : MonoBehaviour
         if (isShieldBroken) { return; }
         if (obj)
         {
+            Anim.ResetTrigger("CancelParry");
             Anim.SetTrigger("Parry");
         }
         else
         {
             Anim.SetTrigger("CancelParry");
+            
         }
     }
 

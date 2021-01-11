@@ -15,7 +15,10 @@ public class ClawAttack : BossAttack
 
     public override IEnumerator Attack(Action onFinish)
     {
-        yield return GoToPlayer(minDistanceToPlayerOne);
+        if (!IsCloseToPlayer(minDistanceToPlayerOne))
+        {
+            yield return GoToPlayer(minDistanceToPlayerOne);
+        }
         yield return DoWindup(BossAnimation.BossAnim.WindupOne, windupTime);
         yield return DoClawAttack(hitBox, endLagTime, clipOne);
         onFinish?.Invoke();
@@ -23,7 +26,6 @@ public class ClawAttack : BossAttack
 
     public IEnumerator GoToPlayer(float distance)
     {
-        if (IsCloseToPlayer(distance)) { yield break; }
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.StandingRun);
         while (!IsCloseToPlayer(distance))
         {
@@ -69,7 +71,7 @@ public class ClawAttack : BossAttack
         isWaitingForAnim = false;
     }
 
-    private bool IsCloseToPlayer(float distance)
+    protected bool IsCloseToPlayer(float distance)
     {
         return Vector2.Distance(transform.position.Grounded(), BossDirection.Instance.target.position.Grounded()) < distance;
     }

@@ -8,7 +8,7 @@ public class CharacterCollision : MonoBehaviour
     public FloatValue DamageTakenFreezeFrame;
     public FloatValue ShieldedFreezeFrame;
     public FloatValue PerfectShieldedFreezeFrame;
-
+    public FloatValue InvincibilityTime;
 
     public BoolValue shieldValue;
     public BoolValue perfectShieldValue;
@@ -20,6 +20,12 @@ public class CharacterCollision : MonoBehaviour
     public KnockBackGameEvent KnockBackRequest;
     public FloatGameEvent HealthDamageRequest;
     public FloatGameEvent ShieldDamageRequest;
+
+    public SpriteRenderer spriteRenderer;
+    public TrailRenderer trail;
+    public float blinkDuration;
+
+    private bool isInvincible;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -45,12 +51,16 @@ public class CharacterCollision : MonoBehaviour
             }
             else
             {
-                DisplayBlood(col, damageDealer);
-                HitFlashEvent.Raise();
-                FreezeFrameRequest.Raise(DamageTakenFreezeFrame.Value);
-                RequestKnockback(damageDealer.attackData.UnshieldedKnockBack, col);
-                HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage);
-                damageDealer.gameObject.SetActive(false);
+                if (!isInvincible)
+                {
+                    StartCoroutine(InvincibilityFrames());
+                    DisplayBlood(col, damageDealer);
+                    HitFlashEvent.Raise();
+                    FreezeFrameRequest.Raise(DamageTakenFreezeFrame.Value);
+                    RequestKnockback(damageDealer.attackData.UnshieldedKnockBack, col);
+                    HealthDamageRequest.Raise(damageDealer.attackData.HealthDamage);
+                    damageDealer.gameObject.SetActive(false);
+                }
             }
 
         }
@@ -71,5 +81,26 @@ public class CharacterCollision : MonoBehaviour
             direction = (transform.position.Grounded() - col.transform.position.Grounded())
         };
         KnockBackRequest.Raise(knockback);
+    }
+
+    private IEnumerator InvincibilityFrames()
+    {
+        isInvincible = true;
+        StartCoroutine(Blink());
+        yield return new WaitForSeconds(InvincibilityTime.Value);
+        isInvincible = false;
+    }
+
+    private IEnumerator Blink()
+    {
+        trail.enabled = false;
+        while (isInvincible)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(blinkDuration);
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(blinkDuration);
+        }
+        trail.enabled = true;
     }
 }

@@ -13,11 +13,17 @@ public class DoubleClawAttack : ClawAttack
 
     public override IEnumerator Attack(Action onFinish)
     {
-        yield return GoToPlayer(minDistanceToPlayerOne);
+        if (!IsCloseToPlayer(minDistanceToPlayerOne))
+        {
+            yield return GoToPlayer(minDistanceToPlayerOne);
+        }
         yield return DoWindup(BossAnimation.BossAnim.WindupOne, windupTime);
         yield return DoClawAttack(hitBox, endLagTime, clipOne);
 
-        yield return GoToPlayer(minDistanceToPlayerTwo);
+        if (!IsCloseToPlayer(minDistanceToPlayerTwo))
+        {
+            yield return GoToPlayer(minDistanceToPlayerTwo);
+        }
         yield return DoWindup(BossAnimation.BossAnim.WindupTwo, windupTimeTwo);
         yield return DoClawAttack(hitBoxTwo, endLagTimeTwo, clipTwo);
         onFinish?.Invoke();
