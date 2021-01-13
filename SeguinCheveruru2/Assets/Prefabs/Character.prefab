@@ -701,7 +701,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: cb2ca9ea3aabf3a41a0f7c63b4882df9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6605,8 +6605,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019928932, y: 0.19653511}
-  m_Size: {x: 3.8768024, y: 8.08823}
+  m_Offset: {x: 0.09843254, y: 0.8962374}
+  m_Size: {x: 3.3429756, y: 6.6888256}
   m_Direction: 0
 --- !u!114 &3271161188130334562
 MonoBehaviour:
@@ -6734,6 +6734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PerfectShieldObject: {fileID: 3271161187687694719}
   IsPerfectShielding: {fileID: 11400000, guid: dd4bba2cee1c6c649ab1d9513f4573f6, type: 2}
+  ShieldValue: {fileID: 11400000, guid: ef4c67956ff75f047ad11e8636ad8205, type: 2}
 --- !u!114 &3271161188130334488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6749,6 +6750,8 @@ MonoBehaviour:
   DamageTakenFreezeFrame: {fileID: 11400000, guid: 6a4af36b6e16b954789e0f211f8d0848, type: 2}
   ShieldedFreezeFrame: {fileID: 11400000, guid: c98d64fd2251cbf49899c493013b18d5, type: 2}
   PerfectShieldedFreezeFrame: {fileID: 11400000, guid: fb04fc56d1eab6c40972518e716ee320, type: 2}
+  InvincibilityTime: {fileID: 11400000, guid: fb1ae643d8d7d2d468236b62ded9ab69, type: 2}
+  ParriedInvincibilityTime: {fileID: 11400000, guid: 87186141c3b6b574d89e856bbb449288, type: 2}
   shieldValue: {fileID: 11400000, guid: 92dfbe25b9949ca42806637294de55a7, type: 2}
   perfectShieldValue: {fileID: 11400000, guid: dd4bba2cee1c6c649ab1d9513f4573f6, type: 2}
   HitFlashEvent: {fileID: 11400000, guid: 9e0503b65e4a2d64991bea5ed2ac6435, type: 2}
@@ -6758,6 +6761,9 @@ MonoBehaviour:
   KnockBackRequest: {fileID: 11400000, guid: f15b8bd7ede25224eaccc749b54ed073, type: 2}
   HealthDamageRequest: {fileID: 11400000, guid: 0e16e4893f6aa1643b9f91a2a98f1362, type: 2}
   ShieldDamageRequest: {fileID: 11400000, guid: e8a373771c059a84885bec10fa68177b, type: 2}
+  spriteRenderer: {fileID: 729595225}
+  trail: {fileID: 1718471854}
+  blinkDuration: 0.15
 --- !u!114 &3271161188130334490
 MonoBehaviour:
   m_ObjectHideFlags: 0

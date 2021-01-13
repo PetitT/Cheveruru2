@@ -9,6 +9,7 @@ public class CharacterCollision : MonoBehaviour
     public FloatValue ShieldedFreezeFrame;
     public FloatValue PerfectShieldedFreezeFrame;
     public FloatValue InvincibilityTime;
+    public FloatValue ParriedInvincibilityTime;
 
     public BoolValue shieldValue;
     public BoolValue perfectShieldValue;
@@ -43,6 +44,7 @@ public class CharacterCollision : MonoBehaviour
             else if (perfectShieldValue.Value)
             {
                 FreezeFrameRequest.Raise(PerfectShieldedFreezeFrame.Value);
+                StartCoroutine(InvincibilityFrames(ParriedInvincibilityTime.Value));
                 PerfectParryEvent.Raise();
                 if (col.TryGetComponent(out IRevertableProjectile revert))
                 {
@@ -53,7 +55,8 @@ public class CharacterCollision : MonoBehaviour
             {
                 if (!isInvincible)
                 {
-                    StartCoroutine(InvincibilityFrames());
+                    StartCoroutine(InvincibilityFrames(InvincibilityTime.Value));
+                    StartCoroutine(Blink());
                     DisplayBlood(col, damageDealer);
                     HitFlashEvent.Raise();
                     FreezeFrameRequest.Raise(DamageTakenFreezeFrame.Value);
@@ -83,11 +86,10 @@ public class CharacterCollision : MonoBehaviour
         KnockBackRequest.Raise(knockback);
     }
 
-    private IEnumerator InvincibilityFrames()
+    private IEnumerator InvincibilityFrames(float time)
     {
         isInvincible = true;
-        StartCoroutine(Blink());
-        yield return new WaitForSeconds(InvincibilityTime.Value);
+        yield return new WaitForSeconds(time);
         isInvincible = false;
     }
 

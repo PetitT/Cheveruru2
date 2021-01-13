@@ -1,37 +1,28 @@
 fileFormatVersion: 2
-guid: 60ae5f9bc6a62af448969e1162fa4967
+guid: 266994ff6ac74b3428fbd33be91acb32
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5919812180417914293
-    second: WolfAttackOne_0
+      213: 2690044895605582352
+    second: WolfDeath_0
   - first:
-      213: -5513839909517467117
-    second: WolfAttackOne_1
+      213: 7318100691159677323
+    second: WolfDeath_1
   - first:
-      213: 6818288164842639209
-    second: WolfAttackOne_2
+      213: -3081734845132767040
+    second: WolfDeath_2
   - first:
-      213: 407355181720974716
-    second: WolfAttackOne_3
+      213: -4380616010869967409
+    second: WolfDeath_3
   - first:
-      213: 3365548278752909470
-    second: WolfAttackOne_4
+      213: -3196004521610175863
+    second: WolfDeath_4
   - first:
-      213: -5475129947879285314
-    second: WolfAttackOne_5
+      213: 5486405801148069545
+    second: WolfDeath_5
   - first:
-      213: 2050704910447757811
-    second: WolfAttackOne_6
-  - first:
-      213: 5472015269087318824
-    second: WolfAttackOne_7
-  - first:
-      213: 979323108112118354
-    second: WolfAttackOne_8
-  - first:
-      213: 895333161325394481
-    second: WolfAttackOne_9
+      213: 1351092700907429884
+    second: WolfDeath_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -62,7 +53,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: 2
     mipBias: -100
     wrapU: 1
@@ -76,7 +67,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 36
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -155,70 +146,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WolfAttackOne_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 4500
-        width: 1500
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b527d640d5672250800000000000000
-      internalID: 5919812180417914293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfAttackOne_1
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 4500
-        width: 1500
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 312e6dcd0d7ea73b0800000000000000
-      internalID: -5513839909517467117
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfAttackOne_2
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 4500
-        width: 1500
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96f02b906fc6f9e50800000000000000
-      internalID: 6818288164842639209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfAttackOne_3
+      name: WolfDeath_0
       rect:
         serializedVersion: 2
         x: 0
@@ -232,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c75b4e7216737a500800000000000000
-      internalID: 407355181720974716
+      spriteID: 01a6c608495f45520800000000000000
+      internalID: 2690044895605582352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfAttackOne_4
+      name: WolfDeath_1
       rect:
         serializedVersion: 2
         x: 1500
@@ -253,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e989e7df354d4be20800000000000000
-      internalID: 3365548278752909470
+      spriteID: b89fc1f3ecd1f8560800000000000000
+      internalID: 7318100691159677323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfAttackOne_5
+      name: WolfDeath_2
       rect:
         serializedVersion: 2
         x: 3000
@@ -274,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd5d85225e6404b0800000000000000
-      internalID: -5475129947879285314
+      spriteID: 0c00bef6c7a7b35d0800000000000000
+      internalID: -3081734845132767040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfAttackOne_6
+      name: WolfDeath_3
       rect:
         serializedVersion: 2
         x: 0
@@ -295,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f9436e3041957c10800000000000000
-      internalID: 2050704910447757811
+      spriteID: fc5f4b692fce433c0800000000000000
+      internalID: -4380616010869967409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfAttackOne_7
+      name: WolfDeath_4
       rect:
         serializedVersion: 2
         x: 1500
@@ -316,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 823967f25e080fb40800000000000000
-      internalID: 5472015269087318824
+      spriteID: 98a12ec12d285a3d0800000000000000
+      internalID: -3196004521610175863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfAttackOne_8
+      name: WolfDeath_5
       rect:
         serializedVersion: 2
         x: 3000
@@ -337,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 252ba5b9d21479d00800000000000000
-      internalID: 979323108112118354
+      spriteID: 9a6b2170201a32c40800000000000000
+      internalID: 5486405801148069545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfAttackOne_9
+      name: WolfDeath_6
       rect:
         serializedVersion: 2
         x: 0
@@ -358,8 +286,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13a7d6c34ccdc6c00800000000000000
-      internalID: 895333161325394481
+      spriteID: cffd53037ab00c210800000000000000
+      internalID: 1351092700907429884
       vertices: []
       indices: 
       edges: []
@@ -367,7 +295,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 43a6fb5df22c00d4f832428ad58d7026
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

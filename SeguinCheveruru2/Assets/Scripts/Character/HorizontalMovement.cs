@@ -22,6 +22,7 @@ public class HorizontalMovement : Move
 
     public void Move(float X)
     {
+        Debug.Log(X);
         XValue.Value = X;
         Vector2 direction = lastDirection;
 

@@ -24,6 +24,9 @@ public class DoubleClawAttack : ClawAttack
         {
             yield return GoToPlayer(minDistanceToPlayerTwo);
         }
+        BossDirection.Instance.ToggleRotation(true);
+        yield return null;
+        BossDirection.Instance.ToggleRotation(false);
         yield return DoWindup(BossAnimation.BossAnim.WindupTwo, windupTimeTwo);
         yield return DoClawAttack(hitBoxTwo, endLagTimeTwo, clipTwo);
         onFinish?.Invoke();

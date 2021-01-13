@@ -7,6 +7,7 @@ public class PerfectShieldDisplay : MonoBehaviour
 {
     public GameObject PerfectShieldObject;
     public BoolValue IsPerfectShielding;
+    public FloatValue ShieldValue;
 
     private void Awake()
     {
@@ -20,6 +21,9 @@ public class PerfectShieldDisplay : MonoBehaviour
 
     private void ValueChangedHandler(bool toggle)
     {
-        PerfectShieldObject.SetActive(toggle);
+        if (ShieldValue.Value > 0.1f)
+        {
+            PerfectShieldObject.SetActive(toggle);
+        }
     }
 }

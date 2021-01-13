@@ -27,6 +27,9 @@ public class TripleClawAttack : DoubleClawAttack
         {
             yield return GoToPlayer(minDistanceToPlayerTwo);
         }
+        BossDirection.Instance.ToggleRotation(true);
+        yield return null;
+        BossDirection.Instance.ToggleRotation(false);
         yield return DoWindup(BossAnimation.BossAnim.WindupTwo, windupTimeTwo);
         yield return DoClawAttack(hitBoxTwo, endLagTimeTwo, clipTwo);
 
@@ -34,6 +37,9 @@ public class TripleClawAttack : DoubleClawAttack
         {
             yield return GoToPlayer(minDistanceToPlayerThree);
         }
+        BossDirection.Instance.ToggleRotation(true);
+        yield return null;
+        BossDirection.Instance.ToggleRotation(false);
         yield return DoWindup(BossAnimation.BossAnim.WindupThree, windupTimeThree);
         isDashing = true;
         yield return DoClawAttack(hitBoxThree, endLagTimeThree, clipThree);
