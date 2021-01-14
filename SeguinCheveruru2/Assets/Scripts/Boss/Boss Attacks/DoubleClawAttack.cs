@@ -31,4 +31,9 @@ public class DoubleClawAttack : ClawAttack
         yield return DoClawAttack(hitBoxTwo, endLagTimeTwo, clipTwo);
         onFinish?.Invoke();
     }
+
+    public override void CancelAttack()
+    {
+        StopCoroutine(Attack(() => { }));
+    }
 }

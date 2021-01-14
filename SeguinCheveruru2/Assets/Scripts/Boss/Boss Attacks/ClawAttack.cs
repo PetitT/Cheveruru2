@@ -24,6 +24,11 @@ public class ClawAttack : BossAttack
         onFinish?.Invoke();
     }
 
+    public override void CancelAttack()
+    {
+        StopCoroutine(Attack(() => { }));
+    }
+
     public IEnumerator GoToPlayer(float distance)
     {
         BossAnimation.Instance.Animate(BossAnimation.BossAnim.StandingRun);

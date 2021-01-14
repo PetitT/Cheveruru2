@@ -35,6 +35,11 @@ public class FangThrow : BossAttack
         onFinish?.Invoke();
     }
 
+    public override void CancelAttack()
+    {
+        StopCoroutine(Attack(() => { }) );
+    }
+
     private IEnumerator GoToWall()
     {
         Vector2 targetPos = FindTargetPos();

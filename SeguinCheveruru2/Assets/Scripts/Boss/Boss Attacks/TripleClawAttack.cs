@@ -48,6 +48,11 @@ public class TripleClawAttack : DoubleClawAttack
         onFinish?.Invoke();
     }
 
+    public override void CancelAttack()
+    {
+        StopCoroutine(Attack(() => { }));
+    }
+
     private void Update()
     {
         if (isDashing)

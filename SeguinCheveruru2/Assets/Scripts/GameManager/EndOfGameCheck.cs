@@ -11,6 +11,9 @@ public class EndOfGameCheck : MonoBehaviour
     public GameObject player;
     public GameObject boss;
 
+    public Collider2D bossCollider;
+    public Collider2D playerCollider;
+
     private void Awake()
     {
         onPlayerDeath.onEventRaised += OnPlayerDeath_onEventRaised;
@@ -25,7 +28,11 @@ public class EndOfGameCheck : MonoBehaviour
 
     private void OnBossDeath_onEventRaised()
     {
-        boss.SetActive(false);
+        BossDirection.Instance.ToggleRotation(false);
+        BossAnimation.Instance.Animate(BossAnimation.BossAnim.Die);
+        bossCollider.enabled = false;
+        playerCollider.enabled = false;
+
         StartCoroutine("RestartGame");
     }
 
@@ -37,7 +44,7 @@ public class EndOfGameCheck : MonoBehaviour
 
     private IEnumerator RestartGame()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

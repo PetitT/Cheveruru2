@@ -415,6 +415,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6503156322403922463, guid: ab646aef1baa27a4c8f96524e75fddc4, type: 3}
   m_PrefabInstance: {fileID: 3315526196045693886}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &130166186 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3315526196045693898, guid: ab646aef1baa27a4c8f96524e75fddc4, type: 3}
+  m_PrefabInstance: {fileID: 3315526196045693886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &152975895
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,7 +2770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &807570228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5251,6 +5256,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3271161188130334575, guid: 85351aa808dc3e044ae26c09af2a8e42, type: 3}
   m_PrefabInstance: {fileID: 3271161187594167512}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &1463975750 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3271161188130334489, guid: 85351aa808dc3e044ae26c09af2a8e42, type: 3}
+  m_PrefabInstance: {fileID: 3271161187594167512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!21 &1466233247
 Material:
   serializedVersion: 6
@@ -5622,7 +5632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1664784421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6208,7 +6218,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798145733}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 099021b957486d1499b665e1e6f17554, type: 3}
   m_Name: 
@@ -6406,6 +6416,8 @@ MonoBehaviour:
   onBossDeath: {fileID: 11400000, guid: 6975a7d8c7986c140a70dec3c2107cdf, type: 2}
   player: {fileID: 1463975740}
   boss: {fileID: 130166167}
+  bossCollider: {fileID: 130166186}
+  playerCollider: {fileID: 1463975750}
 --- !u!114 &1798145740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7056,6 +7068,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 619445602, guid: ab646aef1baa27a4c8f96524e75fddc4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.03
+      objectReference: {fileID: 0}
     - target: {fileID: 777329577, guid: ab646aef1baa27a4c8f96524e75fddc4, type: 3}
       propertyPath: topRight
       value: 
@@ -7134,7 +7150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3315526196045693888, guid: ab646aef1baa27a4c8f96524e75fddc4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315526196045693893, guid: ab646aef1baa27a4c8f96524e75fddc4, type: 3}
       propertyPath: target

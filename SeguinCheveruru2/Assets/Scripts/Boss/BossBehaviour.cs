@@ -12,8 +12,11 @@ public class BossBehaviour : MonoBehaviour
     public List<BossPhase> phases;
     private int currentPhaseIndex = 0;
     private BossPhase currentPhase => phases[currentPhaseIndex];
+    private BossAttack currentAttack = null;
     private BossAttack lastAttack = null;
     private float remainingTimeToAttack;
+
+    private bool canAttack = true;
 
     private void Awake()
     {
@@ -29,12 +32,20 @@ public class BossBehaviour : MonoBehaviour
 
     private void Update()
     {
-        CheckAttack();
+        if (canAttack)
+        {
+            CheckAttack();
+        }
     }
 
     private void BossHealthValueChangedHandler(float obj)
     {
-        if(currentPhaseIndex >= phases.Count) { Debug.Log("END"); return;  }
+        if(obj <= 0)
+        {
+            canAttack = false;
+            currentAttack?.CancelAttack();
+        }
+        if (currentPhaseIndex >= phases.Count) { return; }
         if (bossHealth.Value / bossHealth.InitialValue < currentPhase.threshold)
         {
             currentPhaseIndex++;
@@ -49,15 +60,15 @@ public class BossBehaviour : MonoBehaviour
         {
             isAttacking.Value = true;
             remainingTimeToAttack = currentPhase.timeBetweenAttacks.RandomRange();
-            BossAttack newAttack = GetRandomAttack();
-            StartCoroutine(newAttack.Attack(() => isAttacking.Value = false));
+            currentAttack = GetRandomAttack();
+            StartCoroutine(currentAttack.Attack(() => isAttacking.Value = false));
         }
     }
 
     private BossAttack GetRandomAttack()
     {
         BossAttack attack = currentPhase.attacks.GetRandom();
-        if(lastAttack != null && lastAttack == attack)
+        if (lastAttack != null && lastAttack == attack)
         {
             return GetRandomAttack();
         }

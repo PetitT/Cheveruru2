@@ -38,9 +38,6 @@ public class Starfall : BossAttack
         float X = new Vector2(col.bounds.center.x - XSize, col.bounds.center.x + XSize).RandomRange();
         float Y = new Vector2(col.bounds.center.y - YSize, col.bounds.center.y + YSize).RandomRange();
         
-
-        //float X = new Vector2(bottomLeft.position.x, topRight.position.x).RandomRange();
-        //float Y = new Vector2(bottomLeft.position.y, topRight.position.y).RandomRange();
         return new Vector3(X, Y, -1);
     }
 
@@ -60,6 +57,12 @@ public class Starfall : BossAttack
         CameraTarget.Instance.ToggleRecenter(false);
         onFinish?.Invoke();
         StartCoroutine(RespawnStars());
+    }
+
+    public override void CancelAttack()
+    {
+        StopCoroutine(Attack(() => { }));
+        StartCoroutine(GoToTarget(endOfAttackPosition.position));
     }
 
     private IEnumerator GoToTarget(Vector2 targetPos)

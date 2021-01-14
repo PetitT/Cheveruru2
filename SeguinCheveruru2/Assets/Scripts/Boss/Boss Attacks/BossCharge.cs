@@ -46,4 +46,9 @@ public class BossCharge : BossAttack
         BossDirection.Instance.ToggleRotation(true);
         onFinish?.Invoke();
     }
+
+    public override void CancelAttack()
+    {
+        StopCoroutine(Attack(() => { }));
+    }
 }

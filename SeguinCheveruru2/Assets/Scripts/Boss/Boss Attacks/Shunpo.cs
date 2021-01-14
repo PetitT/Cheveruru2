@@ -58,4 +58,9 @@ public class Shunpo : BossAttack
         yield return new WaitForSeconds(postWaitTime);
         onFinish?.Invoke();
     }
+
+    public override void CancelAttack()
+    {
+        StopCoroutine(Attack(() => { }));
+    }
 }

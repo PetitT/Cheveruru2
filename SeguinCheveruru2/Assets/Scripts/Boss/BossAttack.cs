@@ -18,4 +18,5 @@ public abstract class BossAttack : MonoBehaviour
     }
 
     public abstract IEnumerator Attack(Action onFinish);
+    public abstract void CancelAttack();
 }
