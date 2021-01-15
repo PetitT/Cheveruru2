@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e89764333fa0a4783b8ef85db02a41, type: 3}
   m_Name: Text 2
   m_EditorClassIdentifier: 
-  InitialValue: I was wrong...
-  runtimeValue: I was wrong...
+  InitialValue: I was weak.
+  runtimeValue: I was weak.

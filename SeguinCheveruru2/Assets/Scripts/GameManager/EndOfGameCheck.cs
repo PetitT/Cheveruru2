@@ -70,11 +70,12 @@ public class EndOfGameCheck : MonoBehaviour
         yield return writer.WriteText(endText, 0.1f, "Sit down, dog", () => { });
         yield return new WaitForSeconds(0.5f);
         fadeCanvas.SetTrigger("FadeOut");
+        yield return RestartGame();
     }
 
     private IEnumerator RestartGame()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

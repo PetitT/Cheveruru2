@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthDamage: 0
   ShieldDamage: 0
-  UnshieldedKnockBack: 0
-  ShieldedKnockBack: 0
+  UnshieldedKnockBack: 2
+  ShieldedKnockBack: 1

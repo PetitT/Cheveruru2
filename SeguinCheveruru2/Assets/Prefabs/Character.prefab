@@ -6761,6 +6761,7 @@ MonoBehaviour:
   KnockBackRequest: {fileID: 11400000, guid: f15b8bd7ede25224eaccc749b54ed073, type: 2}
   HealthDamageRequest: {fileID: 11400000, guid: 0e16e4893f6aa1643b9f91a2a98f1362, type: 2}
   ShieldDamageRequest: {fileID: 11400000, guid: e8a373771c059a84885bec10fa68177b, type: 2}
+  onProjectileReflected: {fileID: 11400000, guid: d48e82f3b64b6ab4fab7164833916c72, type: 2}
   spriteRenderer: {fileID: 729595225}
   trail: {fileID: 1718471854}
   blinkDuration: 0.15

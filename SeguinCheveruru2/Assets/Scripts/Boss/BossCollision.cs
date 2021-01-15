@@ -9,6 +9,7 @@ public class BossCollision : MonoBehaviour
     public FloatGameEvent FreezeFrameRequest;
     public GameEvent FlashRequest;
     public FloatValue FreezeFrameIntensity;
+    public GameEvent onBossHitByWeapon;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,6 +25,7 @@ public class BossCollision : MonoBehaviour
             }
             else
             {
+                onBossHitByWeapon.Raise();
                 FreezeFrameRequest.Raise(FreezeFrameIntensity.Value);
             }
         }

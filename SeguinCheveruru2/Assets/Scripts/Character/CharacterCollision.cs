@@ -22,6 +22,8 @@ public class CharacterCollision : MonoBehaviour
     public FloatGameEvent HealthDamageRequest;
     public FloatGameEvent ShieldDamageRequest;
 
+    public GameEvent onProjectileReflected;
+
     public SpriteRenderer spriteRenderer;
     public TrailRenderer trail;
     public float blinkDuration;
@@ -48,6 +50,7 @@ public class CharacterCollision : MonoBehaviour
                 PerfectParryEvent.Raise();
                 if (col.TryGetComponent(out IRevertableProjectile revert))
                 {
+                    onProjectileReflected.Raise();
                     revert.OnRevert();
                 }
             }
