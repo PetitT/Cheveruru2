@@ -2707,7 +2707,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 262189141505193924, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 262189141505193924, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 262189141505193924, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 262189141505193924, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 262189141505193925, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
       propertyPath: m_SortingOrder
