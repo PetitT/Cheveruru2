@@ -20,7 +20,7 @@ public class EndOfGameCheck : MonoBehaviour
     public HorizontalMovement horizontalMove;
     public CharacterMovementManager movement;
     public Animator anim;
-    public TextMeshProUGUI endText;
+    public TMP_Text endText;
     public List<GameObject> itemsToDeactivate;
 
     public Animator fadeCanvas;
@@ -66,8 +66,8 @@ public class EndOfGameCheck : MonoBehaviour
         Destroy(movement);
         anim.SetBool("IsMoving", false);
         yield return new WaitForSeconds(1);
-        LetteredTextWriter writer = new LetteredTextWriter();
-        yield return writer.WriteText(endText, 0.1f, "Sit down, dog", () => { });
+       // LetteredTextWriter writer = new LetteredTextWriter();
+        yield return LetteredTextWriter.WriteText(endText, 0.1f, "Sit down, dog", () => { });
         yield return new WaitForSeconds(0.5f);
         fadeCanvas.SetTrigger("FadeOut");
         yield return RestartGame();

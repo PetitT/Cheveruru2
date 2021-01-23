@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TextWriter : MonoBehaviour
 {
-    public TextMeshProUGUI tmp;
+    public TMP_Text tmp;
     public List<StringValue> texts;
     public float timeBetweenLetters;
     public float timeBetweenTexts;
@@ -53,7 +53,7 @@ public class TextWriter : MonoBehaviour
             tmp.text = completeText;
             yield return letterWait;
         }
-        yield return dissapearTime;
+        yield return new WaitForSeconds(timeToDissapear);
         tmp.text = "";
     }
 }

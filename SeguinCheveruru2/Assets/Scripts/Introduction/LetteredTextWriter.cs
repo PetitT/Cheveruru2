@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class LetteredTextWriter
+public static class LetteredTextWriter
 {
-    public IEnumerator WriteText(TextMeshProUGUI tmp, float timeBetweenletters, string text, Action onFinish)
+    public static IEnumerator WriteText(TMP_Text tmp, float timeBetweenletters, string text, Action onFinish)
     {
         char[] charArray = text.ToCharArray();
         string completeText = "";
