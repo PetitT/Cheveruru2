@@ -2648,11 +2648,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FadeCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 262189141505193931, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 262189143318532326, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 262189141505193931, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ae6b14c30aab95a40ab5e919337c2635, type: 3}
 --- !u!1 &621760978
 GameObject:
@@ -3327,7 +3332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &807570228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6822,7 +6827,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798145733}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 099021b957486d1499b665e1e6f17554, type: 3}
   m_Name: 
@@ -8026,6 +8031,10 @@ PrefabInstance:
     - target: {fileID: 2660496307059777236, guid: 6ea04aa3a828c514b8220e11116ffaf5, type: 3}
       propertyPath: m_Name
       value: MobileButtons
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660496307059777236, guid: 6ea04aa3a828c514b8220e11116ffaf5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2660496307059777237, guid: 6ea04aa3a828c514b8220e11116ffaf5, type: 3}
       propertyPath: m_Pivot.x
